@@ -19,7 +19,7 @@ const { db } = require('../util/admin');
 exports.getWebsiteData = (request, response) => {
 	db
         .collection('data')
-        .doc('WMAA00bAtbJH8f6T7CPj')
+        .doc('projects')
         .get()
 		.then((doc) => {
             console.log(doc.data())
