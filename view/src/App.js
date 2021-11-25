@@ -8,10 +8,10 @@ function App() {
       <header className="navbar">
         <h1 class="logo"><a href="/index">Mikal Young</a></h1>
         <ul id="links">
-            <li><a id="link0">Home</a></li>
-            <li><a id="link1">About Me</a></li>
-            <li><a id="link2">Projects</a></li>
-            <li><a id="link3">Contact Me</a></li>
+            <li><button id="link0" >Home</button></li>
+            <li><button id="link1" >About Me</button></li>
+            <li><button id="link2" >Projects</button></li>
+            <li><button id="link3" >Contact Me</button></li>
         </ul>
       </header>
       <About />
