@@ -1,3 +1,5 @@
+import React from 'react';
+
 function Project(props) {
     let data = props.data
     return (

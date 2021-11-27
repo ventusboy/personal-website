@@ -1,3 +1,5 @@
+import React from 'react';
+
 function Page1 () {
     return(
         <div id="page1" className="page">

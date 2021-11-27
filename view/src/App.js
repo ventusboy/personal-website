@@ -1,6 +1,8 @@
 import './App.css';
 import About from './pages/About';
 import Projects from './pages/Projects';
+import React from 'react';
+
 
 function App() {
   return (
