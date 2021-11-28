@@ -2,16 +2,16 @@ const functions = require("firebase-functions");
 const app = require('express')();
 // const cors = require('cors')
 const { db } = require('./util/admin');
-const cors = require('cors')({origin: true});
+const cors = require('cors')({origin: '*'});
 
-app.use(cors())
-/* app.use(function (req, res, next) {
+app.use(cors)
+app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
-}); */
+});
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions

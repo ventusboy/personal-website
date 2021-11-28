@@ -18,7 +18,7 @@ function Page1 () {
                 <div className="assorted1">
                     <div>
                         <div>
-                            <a href="https://www.linkedin.com/in/mikal-young-6772a516a" target="_blank" rel="noreferrer">
+                            <a href="https://www.linkedin.com/in/mikal-young-6772a516a" target="_blank" rel="noopener noreferrer">
                                 <img src="/assets/img/linkedin-svg.svg" alt="earth" className="earth" id="earth1" />
 
 
@@ -26,7 +26,7 @@ function Page1 () {
                         </div>
 
                         <div>
-                            <a href="https://github.com/ventusboy" target="_blank" rel="noreferrer">
+                            <a href="https://github.com/ventusboy" target="_blank" rel="noopener noreferrer">
                                 <img src="/assets/img/github-svg.svg" alt="earth" className="earth" id="earth2" />
 
                             </a>
@@ -34,14 +34,14 @@ function Page1 () {
 
 
                         <div>
-                            <a href="mailto:mikalyoungie@gmail.com.com" target="_blank" rel="noreferrer">
+                            <a href="mailto:mikalyoungie@gmail.com.com" target="_blank" rel="noopener noreferrer">
                                 <img src="/assets/img/email-svg.svg" alt="earth" className="earth" id="earth3" />
 
                             </a>
                         </div>
 
                         <div>
-                            <a href="https://www.upwork.com/o/profiles/users/_~01f898c51eb6ad6854/" target="_blank" rel="noreferrer">
+                            <a href="https://www.upwork.com/o/profiles/users/_~01f898c51eb6ad6854/" target="_blank" rel="noopener noreferrer">
                                 <img src="/assets/img/upwork-svg.svg" alt="earth" className="earth" id="earth4" />
 
                             </a>

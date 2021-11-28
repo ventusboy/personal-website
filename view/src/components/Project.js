@@ -6,8 +6,8 @@ function Project(props) {
         <button className="mo">
             <div className="card">
                 <div>
-                    <image src="/assets/img/earth2.svg" alt="icon" className="cardImg" />
-                    <a href={data.link} target="_blank" rel="noreferrer">
+                    <img src="/assets/img/earth2.svg" alt="icon" className="cardImg" />
+                    <a href={data.link} target="_blank" rel="noopener noreferrer">
                         <h3 className="cardTitle">{data.name}</h3>
                     </a>
                     <h3 className="arrow">&#x25B3;</h3>

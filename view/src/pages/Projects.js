@@ -11,34 +11,29 @@ class Projects extends React.Component {
     }
 
     componentDidMount () {
-        let projects = axios.get('/api/getProjects').
-            then(res => res.json()).
-            then((data) => {
+        // eslint-disable-next-line
+        axios.get('http://localhost:5000/portfolio-610be/us-central1/api/getProjects'||'/api/getProjects').
+            then(({ data }) => {
                 console.log(data)
                 let projectsArray = []
                 for (const key in data) {
                     projectsArray.push(data[key])
                 }
-                projects = projects.map(element => {
-                    return <Project data = {element} />
+                console.log(projectsArray)
+                let projects = projectsArray.map(element => {
+                    return <Project key = {element.name} data = {element} />
                 });
                 this.setState({
                     projects
                 })
+                console.log(projects)
                 // return projectsArray
             }).catch(() => {
                 console.log('yeet')
             })
-
-        console.log(projects)
     }
 
     render () {
-        let project1 = {
-            link: "https://github.com/Bonfire/OptiGrader",
-            name: "Opti-Grader",
-            description: "Opti-Grader is an Android Application that uses OpenCV, a Computer Vision Library, to scan a scantron using the clients phone and automatically upload and grade the answers. An online gradebook is available on the Opti-Grader website for both the test takers and creators."
-        }
         return (
             <div id="page3" className="page">
                 <h1>Projects</h1>
