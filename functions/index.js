@@ -25,7 +25,22 @@ const {
     getWebsiteData
 } = require('./API/data')
 
-app.get('/data', getWebsiteData);
+app.get('/getAbout', (req, res) => {
+    db
+        .collection('data')
+        .doc('WMAA00bAtbJH8f6T7CPj')
+        .get()
+		.then((doc) => {
+            console.log(doc.data())
+            let data = doc.data()
+			return res.json(data);
+		})
+		.catch((err) => {
+			console.error(err);
+			return res.status(500).json({ error: err.code});
+		});
+});
+
 app.get('/getProjects', (req, res) => {
     db
         .collection('data')
@@ -33,8 +48,8 @@ app.get('/getProjects', (req, res) => {
         .get()
 		.then((doc) => {
             console.log(doc.data())
-            let headers = doc.data()
-			return res.json(headers);
+            let data = doc.data()
+			return res.json(data);
 		})
 		.catch((err) => {
 			console.error(err);

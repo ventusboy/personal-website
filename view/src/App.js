@@ -1,5 +1,6 @@
 import './App.css';
 import About from './pages/About';
+import Home from './pages/Home';
 import Projects from './pages/Projects';
 import React from 'react';
 
@@ -16,6 +17,7 @@ function App() {
             <li><button id="link3" >Contact Me</button></li>
         </ul>
       </header>
+      <Home />
       <About />
       <Projects />
     </div>
