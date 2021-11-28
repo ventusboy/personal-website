@@ -1,5 +1,6 @@
 import Project from "./../components/Project"
 import React from 'react';
+import axios from "axios";
 
 class Projects extends React.Component {
     constructor (props) {
@@ -10,8 +11,8 @@ class Projects extends React.Component {
     }
 
     componentDidMount () {
-        let projects = fetch('/api/getProjects').
-            // then(res => res.json()).
+        let projects = axios.get('/api/getProjects').
+            then(res => res.json()).
             then((data) => {
                 console.log(data)
                 let projectsArray = []
