@@ -12,18 +12,23 @@ class About extends React.Component {
     async componentDidMount () {
         let { data } = await axios.get('http://localhost:5000/portfolio-610be/us-central1/api/getAbout')
         console.log(data)
-        let languages = data.languages.map((language) => {
+        let languages = data.languages.sort((a, b) => {
+            return b.length - a.length
+        })
+        languages = languages.map((language) => {
             return (
-                <li>
+                <li key = {language}>
                     {language}
                 </li>
             )
         })
         this.setState({ languages })
-
-        let tools = data.tools.map((tool) => {
+        let tools = data.tools.sort((a, b) => {
+            return b.length - a.length
+        })
+        tools = data.tools.map((tool) => {
             return (
-                <li>
+                <li key = {tool}>
                     {tool}
                 </li>
             )
@@ -33,7 +38,8 @@ class About extends React.Component {
     render (){
         return (
             <div id="page2" className="page">
-                <div class="assorted">
+                <h1>About Me</h1>
+                <div className="assorted">
                     <div>
                         <h2>Languages Spoken</h2>
                         <br />
@@ -50,24 +56,23 @@ class About extends React.Component {
                     </div>
 
                 </div>
-                <div class="contain">
-                    <h1>About Me</h1>
-                    <p class="scrool"><span style = {{marginLeft: '40px'}}></span>
+                <div className="contain">
+                    <p className="">
                         My developer story starts at the at the University Of Central Florida
                         where I took my first programming class. For the first time ever I was
                         enjoying solving academic problems and learning skills that I could use
                         in my daily life, and the rest was history.<br /><br />
-                        <span style = {{ position: 'relative', left: '0px'}}>
-                            <span style = {{ marginLeft: '40px' }}></span> I pride myself in my ability to go above and beyond
-                            for tasks given to me and my attention to detail. Every second spent developing is an
-                            opportunity
-                            for me to learn something new that I can carry into the future, into other languages, and into
-                            my life.
-                        </span>
+                    </p>
+                    <p>
+                        I pride myself in my ability to go above and beyond
+                        for tasks given to me and my attention to detail. Every second spent developing is an
+                        opportunity
+                        for me to learn something new that I can carry into the future, into other languages, and into
+                        my life.
                     </p>
                 </div>
-                <div class="tri"></div>
-                <div class="apage" id="apage3"></div>
+                <div className="tri"></div>
+                <div className="apage" id="apage3"></div>
             </div>
         )
     }

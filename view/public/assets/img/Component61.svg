@@ -1,0 +1,37 @@
+<svg id="Component_6_1" data-name="Component 6 – 1" xmlns="http://www.w3.org/2000/svg" width="1013.991" height="1013.991" viewBox="0 0 1013.991 1013.991">
+  <g id="Group_9" data-name="Group 9" transform="translate(-188.291 -32.718)">
+    <g id="Rectangle_18" data-name="Rectangle 18" transform="translate(695.287 32.718) rotate(45)" fill="#e9e9e9" fill-opacity="71.9%" stroke="#707070" stroke-width="1">
+      <rect width="717" height="717" stroke="none"/>
+      <rect x="0.5" y="0.5" width="716" height="716" fill="none"/>
+    </g>
+  </g>
+  <g id="Component_5_2" data-name="Component 5 – 2" transform="translate(192.709 330.282)">
+    <g id="Rectangle_2" data-name="Rectangle 2" fill="#909090" stroke="#707070" stroke-linejoin="round" stroke-width="7">
+      <rect width="628" height="351" rx="30" stroke="none"/>
+      <rect x="3.5" y="3.5" width="621" height="344" rx="26.5" fill="none"/>
+    </g>
+    <rect id="Rectangle_3" data-name="Rectangle 3" width="577" height="300" transform="translate(26 26)" fill="#fff" stroke="#707070" stroke-width="10"/>
+    <g id="Rectangle_4" data-name="Rectangle 4" transform="translate(113 150)" fill="#fff" stroke="#707070" stroke-width="3">
+      <rect width="151" height="114" stroke="none"/>
+      <rect x="1.5" y="1.5" width="148" height="111" fill="none"/>
+    </g>
+    <path id="Path_2" data-name="Path 2" d="M0,0H406" transform="translate(111.5 81.5)" fill="none" stroke="#707070" stroke-width="10"/>
+    <path id="Path_4" data-name="Path 4" d="M0,0H406" transform="translate(112.5 287.5)" fill="none" stroke="#707070" stroke-width="10"/>
+    <path id="Path_6" data-name="Path 6" d="M0,.5H239.633" transform="translate(277.867 245.5)" fill="none" stroke="#707070" stroke-width="10"/>
+    <path id="Path_8" data-name="Path 8" d="M0,.5H239.633" transform="translate(277.867 204.5)" fill="none" stroke="#707070" stroke-width="10"/>
+    <path id="Path_10" data-name="Path 10" d="M0,.5H239.633" transform="translate(277.867 163.5)" fill="none" stroke="#707070" stroke-width="10"/>
+    <path id="Path_11" data-name="Path 11" d="M0,.5H404.5" transform="translate(113 119.1)" fill="none" stroke="#707070" stroke-width="10"/>
+    <g id="Rectangle_5" data-name="Rectangle 5" transform="translate(276 348)" fill="#909090" stroke="#707070" stroke-width="3">
+      <rect width="71" height="46" stroke="none"/>
+      <rect x="1.5" y="1.5" width="68" height="43" fill="none"/>
+    </g>
+    <g id="Rectangle_6" data-name="Rectangle 6" transform="translate(214 390)" fill="#909090" stroke="#707070" stroke-width="3">
+      <rect width="196" height="46" stroke="none"/>
+      <rect x="1.5" y="1.5" width="193" height="43" fill="none"/>
+    </g>
+    <g id="Path_12" data-name="Path 12" transform="translate(296 355)" fill="#fff">
+      <path d="M 16 31.5 C 11.85980033874512 31.5 7.967410087585449 29.88772010803223 5.039840221405029 26.96015930175781 C 2.112279891967773 24.03259086608887 0.5 20.14019966125488 0.5 16 C 0.5 11.85980033874512 2.112279891967773 7.967410087585449 5.039840221405029 5.039840221405029 C 7.967410087585449 2.112279891967773 11.85980033874512 0.5 16 0.5 C 20.14019966125488 0.5 24.03259086608887 2.112279891967773 26.96015930175781 5.039840221405029 C 29.88772010803223 7.967410087585449 31.5 11.85980033874512 31.5 16 C 31.5 20.14019966125488 29.88772010803223 24.03259086608887 26.96015930175781 26.96015930175781 C 24.03259086608887 29.88772010803223 20.14019966125488 31.5 16 31.5 Z" stroke="none"/>
+      <path d="M 16 1 C 11.99334907531738 1 8.226520538330078 2.560270309448242 5.393400192260742 5.393400192260742 C 2.560270309448242 8.226520538330078 1 11.99334907531738 1 16 C 1 20.00664901733398 2.560270309448242 23.77347946166992 5.393400192260742 26.60659980773926 C 8.226520538330078 29.43972969055176 11.99334907531738 31 16 31 C 20.00664901733398 31 23.77347946166992 29.43972969055176 26.60659980773926 26.60659980773926 C 29.43972969055176 23.77347946166992 31 20.00664901733398 31 16 C 31 11.99334907531738 29.43972969055176 8.226520538330078 26.60659980773926 5.393400192260742 C 23.77347946166992 2.560270309448242 20.00664901733398 1 16 1 M 16 0 C 24.8365592956543 0 32 7.163440704345703 32 16 C 32 24.8365592956543 24.8365592956543 32 16 32 C 7.163440704345703 32 0 24.8365592956543 0 16 C 0 7.163440704345703 7.163440704345703 0 16 0 Z" stroke="none" fill="#707070"/>
+    </g>
+  </g>
+</svg>

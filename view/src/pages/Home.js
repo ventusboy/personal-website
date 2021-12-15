@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
-function Page1 () {
-    return(
+function Page1() {
+
+    const floatingIconHolder = useRef()
+    // let links = document.querySelectorAll('.assorted1 div div a')
+    let stopFloating = function (e) {
+        let links = document.querySelectorAll('.assorted1 div div a')// .style = { animationPlayState: 'paused' }
+        links.forEach(element => {
+            element.style.animationPlayState = 'paused';
+        });
+        // console.log(document.querySelectorAll('.assorted1 div div a'))
+        // floatingIconHolder.current().
+        // e.target.style.transform = 'scale(1.2, 1.2)';
+    }
+    function keepFloating(e) {
+        let links = document.querySelectorAll('.assorted1 div div a')
+        links.forEach(element => {
+            element.style.animationPlayState = 'running';
+        });
+        //e.target.style.transform = 'scale(.8, .8)';
+    }
+    return (
         <div id="page1" className="page">
             <h1>
                 <div>Making Ideas come to life,<br className="hideom" />
@@ -16,35 +35,49 @@ function Page1 () {
                     Learning is my passion, and problem solving is my hobby.<br /><br />
                 </p>
                 <div className="assorted1">
-                    <div>
-                        <div>
-                            <a href="https://www.linkedin.com/in/mikal-young-6772a516a" target="_blank" rel="noopener noreferrer">
-                                <img src="/assets/img/linkedin-svg.svg" alt="earth" className="earth" id="earth1" />
-
-
-                            </a>
+                    <div ref={floatingIconHolder}>
+                        <div
+                            onMouseEnter={stopFloating}
+                            onMouseLeave={keepFloating}
+                        >
+                            <span>
+                                <a href="https://www.linkedin.com/in/mikal-young-6772a516a" target="_blank" rel="noopener noreferrer">
+                                    <img src="/assets/img/linkedin-svg.svg" alt="earth" className="earth" id="earth1" />
+                                </a>
+                            </span>
                         </div>
 
-                        <div>
-                            <a href="https://github.com/ventusboy" target="_blank" rel="noopener noreferrer">
-                                <img src="/assets/img/github-svg.svg" alt="earth" className="earth" id="earth2" />
-
-                            </a>
+                        <div
+                            onMouseEnter={stopFloating}
+                            onMouseLeave={keepFloating}
+                        >
+                            <span>
+                                <a href="https://github.com/ventusboy" target="_blank" rel="noopener noreferrer">
+                                    <img src="/assets/img/github-svg.svg" alt="earth" className="earth" id="earth2" />
+                                </a>
+                            </span>
                         </div>
 
-
-                        <div>
-                            <a href="mailto:mikalyoungie@gmail.com.com" target="_blank" rel="noopener noreferrer">
-                                <img src="/assets/img/email-svg.svg" alt="earth" className="earth" id="earth3" />
-
-                            </a>
+                        <div
+                            onMouseEnter={stopFloating}
+                            onMouseLeave={keepFloating}
+                        >
+                            <span>
+                                <a href="mailto:mikalmyoung@gmail.com.com" target="_blank" rel="noopener noreferrer">
+                                    <img src="/assets/img/email-svg.svg" alt="earth" className="earth" id="earth3" />
+                                </a>
+                            </span>
                         </div>
 
-                        <div>
-                            <a href="https://www.upwork.com/o/profiles/users/_~01f898c51eb6ad6854/" target="_blank" rel="noopener noreferrer">
-                                <img src="/assets/img/upwork-svg.svg" alt="earth" className="earth" id="earth4" />
-
-                            </a>
+                        <div
+                            onMouseEnter={stopFloating}
+                            onMouseLeave={keepFloating}
+                        >
+                            <span>
+                                <a href="https://www.upwork.com/o/profiles/users/_~01f898c51eb6ad6854/" target="_blank" rel="noopener noreferrer">
+                                    <img src="/assets/img/upwork-svg.svg" alt="earth" className="earth" id="earth4" />
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>

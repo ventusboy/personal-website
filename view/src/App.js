@@ -3,7 +3,7 @@ import About from './pages/About';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import React from 'react';
-
+import './assets/css/main1.scss'
 
 function App() {
   return (
