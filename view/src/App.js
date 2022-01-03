@@ -14,7 +14,6 @@ function App() {
             <li><button id="link0" >Home</button></li>
             <li><button id="link1" >About Me</button></li>
             <li><button id="link2" >Projects</button></li>
-            <li><button id="link3" >Contact Me</button></li>
         </ul>
       </header>
       <Home />

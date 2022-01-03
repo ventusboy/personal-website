@@ -39,7 +39,7 @@ class About extends React.Component {
         return (
             <div id="page2" className="page">
                 <h1>About Me</h1>
-                <div className="assorted">
+                <div className="languages">
                     <div>
                         <h2>Languages Spoken</h2>
                         <br />

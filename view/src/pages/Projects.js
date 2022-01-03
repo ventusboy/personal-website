@@ -25,7 +25,7 @@ class Projects extends React.Component {
                     projects
                 })
             }).catch(() => {
-                console.log('yeet')
+                console.log('error getting projects')
             })
     }
 

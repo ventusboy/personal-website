@@ -3,7 +3,7 @@ import React from 'react';
 function Project(props) {
     let data = props.data
     return (
-        <button className="mo">
+        <button className="mobile-tab">
             <div className="card">
                 <div>
                     <img src="/assets/img/earth2.svg" alt="icon" className="cardImg" />
