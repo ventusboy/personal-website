@@ -6,7 +6,7 @@ function Project(props) {
         <button className="mobile-tab">
             <div className="card">
                 <div>
-                    <img src="/assets/img/earth2.svg" alt="icon" className="cardImg" />
+                    {/* <img src="/assets/img/earth2.svg" alt="icon" className="cardImg" /> -->*/}
                     <a href={data.link} target="_blank" rel="noopener noreferrer">
                         <h3 className="cardTitle">{data.name}</h3>
                     </a>

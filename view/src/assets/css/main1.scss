@@ -394,24 +394,22 @@ body{
         margin-left: auto;
         margin-right: auto;
         margin-top: 50px;
-        display: flex;
-        flex-flow: wrap;
-        justify-content: space-around;
+        display: grid;
+        grid-auto-rows: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+        grid-gap: 50px;
+        padding-bottom: 35px;
         
         .mobile-tab{
-            width: 30%;
-            height: fit-content;
-            // min-height: fit-content;
-            margin-bottom: 48px;
+            width: auto;
+            height: auto;
             background: transparent;
             outline: none;
             border: none;
             padding:0;
         }
         .card{
-            // width: 100%;
-            height: 100%;// auto;//22vw;
-            min-height: fit-content;
+            height: 100%;
             border: 3px solid black;
             background: rgba(255, 255, 255, 0.808);
             box-shadow: black 0em .2em .5em .05em;
@@ -425,8 +423,8 @@ body{
             }
         
             .cardImg{
-                height: 8vw;
-                width: 8vw;
+                height: 80px;
+                width: 80px;
                 transform: scale(.8,.8);
                 float: left;
             }
@@ -434,16 +432,17 @@ body{
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                height: 8vw;
-                font-size: 1.6vw;
+                height: fit-content;
+                padding: 25px 0px;
+                font-size: 2.2em;
             }
             .cardText{
                 position: relative;
-                bottom: 1em;
+                // bottom: 1em;
                 clear: left;
                 padding: 18px;
                 box-sizing: border-box;
-                font-size: 1vw;
+                font-size: 1.3em;
             }
         }
 
