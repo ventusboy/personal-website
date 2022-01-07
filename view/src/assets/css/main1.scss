@@ -465,7 +465,6 @@ and (max-device-width : 1024px) {
     }
     
     #page1{
-        height: 50vh;
         .book{
             //transform: scale(.5,.5);
             //transform: rotate(45deg);
@@ -476,10 +475,13 @@ and (max-device-width : 1024px) {
                 height: 70%;
             }
         }
+        .assorted1 {
+            margin-top: 0px;
+        }
     }
 
     #page2{
-        height: 60vh;
+        // height: 60vh;
         .assorted{
             //height: 40%;
 
@@ -489,18 +491,29 @@ and (max-device-width : 1024px) {
                 transform: scale(.8,.8);
             }
         }
+        .languages div {
+            h2 {
+                font-size: x-large;
+            }
+            ul {
+                font-size: larger;
+            }
+        }
         .contain{
-            margin-left: 4em;
+            margin-left: 20px;
+            p {
+                width: 90%;
+            }
         }
     }
 
     #page3{
         height: fit-content;
-        margin-top: 20vh;
+        // margin-top: 20vh;
         .cardholder{
             margin-left: 5%;
             margin-right: 5%;
-            height: 60vh;
+            // height: 60vh;
             width: auto;
             .mobile-tab{
                 width: 45%;
