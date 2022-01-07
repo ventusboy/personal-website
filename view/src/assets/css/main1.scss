@@ -466,12 +466,9 @@ and (max-device-width : 1024px) {
     
     #page1{
         .book{
-            //transform: scale(.5,.5);
-            //transform: rotate(45deg);
             height: 26vh;
             width: 26vh;
             #book{
-                //transform: scale(.6,.6);
                 height: 70%;
             }
         }
@@ -481,10 +478,7 @@ and (max-device-width : 1024px) {
     }
 
     #page2{
-        // height: 60vh;
         .assorted{
-            //height: 40%;
-
             .earth{
                 height: 7em;
                 width: 7em;
@@ -509,15 +503,11 @@ and (max-device-width : 1024px) {
 
     #page3{
         height: fit-content;
-        // margin-top: 20vh;
         .cardholder{
             margin-left: 5%;
             margin-right: 5%;
-            // height: 60vh;
             width: auto;
             .mobile-tab{
-                width: 45%;
-                height: fit-content;
                 .card{
                     width: 100%;
                 }
