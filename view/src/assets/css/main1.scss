@@ -552,6 +552,7 @@ and (max-width : 667px) {
         }
         
         #links{
+            display: none;
             margin-right: 2px;
             width: 60vw;
             a{
@@ -561,6 +562,28 @@ and (max-width : 667px) {
                 visibility: hidden;
                 -webkit-transform: scaleX(0);
                 transform: scaleX(0);
+            }
+        }
+        #mobile-links{
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: none;
+        }
+        .toggle {
+            height: 50%;
+            width: fit-content;
+            max-width: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-content: space-around;
+            margin-right: 10px;
+            div {
+                background: white;
+                width: 45px;
+                height: 5px;
+                // margin-bottom: 10px;
             }
         }
     }  
@@ -684,15 +707,9 @@ and (max-width : 667px) {
            justify-content: center;
 
            #desktop{
-            position: relative;
-            width: 40vw;
-            //height: 100%;
-            //right: 0;
-            //float: right;
-
-            //float: right;
-            //bottom: 5vh;
-        }
+                position: relative;
+                width: 40vw;
+            }
         }
          
         
@@ -708,26 +725,11 @@ and (max-width : 667px) {
         }
         .languages{
             width: 100%;
-            /// height: 20vh;
-            // margin-left: 0%;
-            // margin-top: 0px;
-            // animation: none;
-            // position: absolute;
-            // display: flex;
-            // justify-content: space-around;
             bottom: 20%;
             div{
                 width: 50%;
                 display: flex;
                 flex-flow: column;
-                h2{
-                    // font-size: 3em;
-                    // text-align: center;
-                }
-                ul{
-                    // font-size: 2.5em;
-                    // text-align: center;
-                }
                 &:nth-child(2) {
                     margin-top: 0px;
                 }
@@ -762,7 +764,6 @@ and (max-width : 667px) {
     }
     #page3{
         height: fit-content;
-        //padding-top: 0;
         h1{
             display: flex;
             margin: 0;
@@ -785,33 +786,24 @@ and (max-width : 667px) {
                 width: 100%;
                 height: fit-content;
                 margin: 0;
-                //background: burlywood;
                 display: block;
                 cursor: pointer;
-                //transition: 2s;
             }
             
             .card{
                 width: 100%;
                 height: 100%;
-                //display: flex;
                 box-shadow: none;
                 border: none;
                 border-bottom: 2px solid black;
                 background: transparent;
                 position: relative;
-                //font-size: 0;
                 div{
-                    // width: 94vw;
                     height: 80px;
                     display: flex;
                     flex-flow: row;
                     justify-content: center;
                     align-content: center;
-                    a {
-                        // width: fit-content;
-                        // display: block;
-                    }
                 }
                 .toggle-btn{
                     position: absolute;
@@ -820,15 +812,9 @@ and (max-width : 667px) {
                     display: flex;
                     font-size: 3em;
                     height: 100%;
-                    width: fit-content; // fit-content;
-                    // text-align: center;
+                    width: fit-content;
                     align-items: center;
                     z-index: 1;
-                    // justify-self: right;
-                    // font-size: 10vw;
-                    // transform: rotate(180deg);
-                    // margin-right: 3vw;
-                    // margin-left: auto;
                     .arrow {
                         display: block;
                         height: fit-content;
@@ -838,22 +824,17 @@ and (max-width : 667px) {
                 }
 
                 .panel, .cardText{
-                    //display: none;
                     height: 0vh;
                     width: 100%;
                     display: block;
                     font-size: 5vw;
-                    //align-items: center;
                     position: initial;
                     padding: 0vh;
                     background: white;
                     overflow: hidden;
                     transition: height .2s ease-out;
-                    //box-sizing: border-box;
                 }
                 .cardTitle{
-                    //margin-left: 15%;
-                    //margin-right: auto;
                     align-self: center;
                     position: initial;
                     float: none;
@@ -866,56 +847,8 @@ and (max-width : 667px) {
             }
             .card:hover{
                transform: scale(1,1); 
-               //background: lavender;
             }
 
         }
-    }
-    #page4{
-        h1{
-            margin-left: 0vw;
-            //background: oldlace;
-        }
-
-        .flip-card{
-            height: 70vh;
-            width: 90vw;
-            //transform: rotateY(180deg);
-
-            .flip-card-inner{
-                //transform: rotateY(180deg);
-            }
-            span{
-                width: fit-content;
-            }
-            .flip-card-back{
-                height: 100%;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                h1{
-                    display: flex;
-                    flex-wrap: wrap;
-                    height: fit-content;
-                }
-            }
-        }
-
-        #contactForm{
-            //margin-left: 1em;
-            //margin-right: 1em;
-            width: 90vw;
-            textarea{
-                font-size: 1.5em;
-            }
-
-            button{
-                width: 30vw;
-                height: 10vw;
-            }
-
-           
-        }
-        
     }
 }
