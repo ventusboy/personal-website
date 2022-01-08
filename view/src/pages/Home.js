@@ -23,7 +23,7 @@ function Page1() {
     return (
         <div id="page1" className="page">
             <h1>
-                <div>Making Ideas come to life,<br className="hideom" />
+                <div>Making Ideas come to life, <br className="hideom" />
                     <span className="indent" id="indent1">one line of code at a time.</span>
                 </div>
             </h1>
