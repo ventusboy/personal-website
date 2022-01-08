@@ -10,9 +10,10 @@ function Project(props) {
                     <a href={data.link} target="_blank" rel="noopener noreferrer">
                         <h3 className="cardTitle">{data.name}</h3>
                     </a>
-                    <h3 className="arrow">&#x25B3;</h3>
                 </div>
-
+                <div className='toggle-btn'>
+                    <h3 className="arrow">&#9660;{/*&#x25B3;*/}</h3>
+                </div>
                 <p className="cardText panel"><span style={{ marginLeft: "40px"}} className="hideom"></span>
                 {data.description}
                 </p>
