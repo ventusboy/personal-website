@@ -21,9 +21,11 @@ function App() {
           <div></div>
         </div>
         <div id='mobile-links'>
-          <li><button id="link0" >Home</button></li>
-          <li><button id="link1" >About Me</button></li>
-          <li><button id="link2" >Projects</button></li>
+          <ul>
+            <li><button id="link0" >Home</button></li>
+            <li><button id="link1" >About Me</button></li>
+            <li><button id="link2" >Projects</button></li>
+          </ul>
         </div>
       </header>
       <Home />
