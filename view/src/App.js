@@ -6,6 +6,11 @@ import React from 'react';
 import './assets/css/main1.scss'
 
 function App() {
+  
+  function toggleMenu() {
+    
+  }
+
   return (
     <div className="App">
       <header className="navbar">
@@ -15,7 +20,7 @@ function App() {
           <li><button id="link1" >About Me</button></li>
           <li><button id="link2" >Projects</button></li>
         </ul>
-        <div className='toggle'>
+        <div className='toggle' onClick={toggleMenu}>
           <div></div>
           <div></div>
           <div></div>

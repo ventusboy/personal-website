@@ -569,11 +569,11 @@ and (max-width : 667px) {
         }
         #mobile-links{
             position: absolute;
-            top: 0;
+            top: 70px;
             right: 0;
             display: flex;
             width: 100vw;
-            height: 100vh;
+            height: calc(100vh - 70px);
             z-index: 2;
             background: black;
             // flex-direction: column;
@@ -587,14 +587,18 @@ and (max-width : 667px) {
                 // width: fit-content;// 150px;
                 display: block;
                 list-style-type: none;
+                margin-top: 20px;
                 li {
                     // width: fit-content;
                     // display: inline-block;
+                    text-align: end;
+                    margin-bottom: 15px;
+                    padding-right: 10px;
                     button {
                         position: relative;
                         height: 100%;
                         // width: fit-content;
-                        font-size: 28px;
+                        font-size: 40px;
                         color: white;
                         font-family: 'Fjalla One', sans-serif;
                         text-decoration: none;
