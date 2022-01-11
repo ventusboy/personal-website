@@ -1,6 +1,6 @@
 var link = [];
 
-for (i = 0; i < 4; i++) {
+/*for (i = 0; i < 4; i++) {
     let x = 600 * i;
     let y = i + 1;
     link[i] = document.getElementById("link" + i);
@@ -14,7 +14,7 @@ for (i = 0; i < 4; i++) {
             behavior: 'smooth'
         });
     })
-};
+};*/
 
 var i = 0;
 

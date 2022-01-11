@@ -22,6 +22,7 @@ function Page1() {
     }
     return (
         <div id="page1" className="page">
+            <div id="anchor1" className="anchor"></div>
             <h1>
                 <div>Making Ideas come to life, <br className="hideom" />
                     <span className="indent" id="indent1">one line of code at a time.</span>
@@ -88,7 +89,7 @@ function Page1() {
                 <img src="/assets/img/Component61.svg" id="desktop" alt="Designed by Mikal Young" />
             </div>
 
-            <div id="apage2"></div>
+            <div id="anchor2" className="anchor"></div>
         </div>
     )
 }

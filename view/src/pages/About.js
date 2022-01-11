@@ -72,7 +72,7 @@ class About extends React.Component {
                     </p>
                 </div>
                 <div className="tri"></div>
-                <div className="apage" id="apage3"></div>
+                <div id="anchor3" className="anchor"></div>
             </div>
         )
     }
