@@ -24,7 +24,7 @@ function Page1() {
         <div id="page1" className="page">
             <div id="anchor1" className="anchor"></div>
             <h1>
-                <div>Making Ideas come to life, <br className="hideom" />
+                <div>Making Ideas come to life, <br className="hide-on-mobile" />
                     <span className="indent" id="indent1">one line of code at a time.</span>
                 </div>
             </h1>

@@ -28,7 +28,7 @@ function App() {
           <li><button id="link1" >About Me</button></li>
           <li><button id="link2" >Projects</button></li>
         </ul>
-        <div className='toggle' onClick={() => {setToggleMenu(!toggleMenu)}}>
+        <div className={'toggle ' + (toggleMenu ? 'toggle-active' : '')} onClick={() => {setToggleMenu(!toggleMenu)}}>
           <div></div>
           <div></div>
           <div></div>

@@ -14,7 +14,7 @@ function Project(props) {
                 <div className='toggle-btn'>
                     <h3 className="arrow">&#9660;{/*&#x25B3;*/}</h3>
                 </div>
-                <p className="cardText panel"><span style={{ marginLeft: "40px"}} className="hideom"></span>
+                <p className="cardText panel"><span style={{ marginLeft: "40px"}} className="hide-on-mobile"></span>
                 {data.description}
                 </p>
             </div>
