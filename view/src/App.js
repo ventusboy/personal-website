@@ -24,9 +24,9 @@ function App() {
       <header className="navbar">
         <h1 className="logo"><a href="/index">Mikal Young</a></h1>
         <ul id="links">
-          <li><button id="link0" >Home</button></li>
-          <li><button id="link1" >About Me</button></li>
-          <li><button id="link2" >Projects</button></li>
+          <li><button onClick={() => { goTo(1) }}>Home</button></li>
+          <li><button onClick={() => { goTo(2) }}>About Me</button></li>
+          <li><button onClick={() => { goTo(3) }} >Projects</button></li>
         </ul>
         <div className={'toggle ' + (toggleMenu ? 'toggle-active' : '')} onClick={() => {setToggleMenu(!toggleMenu)}}>
           <div></div>
@@ -35,9 +35,9 @@ function App() {
         </div>
         <div id='mobile-links' className={animate()}>
           <ul>
-            <li><button id="link0" onClick={() => { goTo(1) }}>Home</button></li>
-            <li><button id="link1" onClick={() => { goTo(2) }}>About Me</button></li>
-            <li><button id="link2" onClick={() => { goTo(3) }}>Projects</button></li>
+            <li><button onClick={() => { goTo(1) }}>Home</button></li>
+            <li><button onClick={() => { goTo(2) }}>About Me</button></li>
+            <li><button onClick={() => { goTo(3) }}>Projects</button></li>
           </ul>
         </div>
       </header>

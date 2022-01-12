@@ -13,24 +13,22 @@ html{
     height: 100vh;
     //backdrop-filter: blur(5px);
     //background-size: cover;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
-body{
-    
-    //position: absolute;
-    //top: 8vh;
-    //left: 0;
+body{   
     width: 100%;
     height: 92vh;
     margin-top: 8vh;
     display: block;
     overflow: scroll;
     overflow-x: hidden;
-    //background: grey;
     background-image: url(/assets/img/blur-clouds-daylight-892541.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    //background-position-y: top;
 }
 .holder{
     display: block;
@@ -39,7 +37,17 @@ body{
    
 }
 
-
+#pages {
+    height: calc(100vh - 70px);
+    position: absolute;
+    top: 70px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
 
 .navbar{
     z-index: 5;
@@ -58,7 +66,6 @@ body{
 }
 
 .logo{
-    // width: 25%;
     height: 100%;
     float: left;
     display: flex;
@@ -69,8 +76,6 @@ body{
         font-family: 'Fugaz One';
         text-decoration: none;
         color: white;
-        // height: 100%;
-        // font-size: 100%;
     }
     
 }
@@ -424,9 +429,8 @@ body{
                 padding: 25px 0px;
                 font-size: 2.2em;
             }
-            .cardText{
+            .cardText p{
                 position: relative;
-                // bottom: 1em;
                 clear: left;
                 padding: 18px;
                 box-sizing: border-box;
@@ -520,21 +524,13 @@ and (max-width : 667px) {
     html{
         width: 100%;
     }
-    #pages {
-        height: calc(100vh - 70px);
-        position: absolute;
-        top: 70px;
-        overflow: scroll;
-        scroll-behavior: smooth;
 
-    }
     .navbar{
         width: 100vw;
 
         .logo {
             height: 100%;
             a{
-                // height: 90%;
                 box-sizing: border-box;
                 display: flex;
                 flex-wrap: wrap;
@@ -556,28 +552,19 @@ and (max-width : 667px) {
             height: calc(100vh - 70px);
             z-index: 2;
             background: black;
-            // flex-direction: column;
-            justify-content: flex-end;// center;
+            justify-content: flex-end;
             align-content: flex-end;
             ul {
-                /* margin-left: auto;
-                position: absolute;
-                right: 0;
-                top: 0; */
-                // width: fit-content;// 150px;
                 display: block;
                 list-style-type: none;
                 margin-top: 20px;
                 li {
-                    // width: fit-content;
-                    // display: inline-block;
                     text-align: end;
                     margin-bottom: 15px;
                     padding-right: 10px;
                     button {
                         position: relative;
                         height: 100%;
-                        // width: fit-content;
                         font-size: 40px;
                         color: white;
                         font-family: 'Fjalla One', sans-serif;
@@ -688,7 +675,6 @@ and (max-width : 667px) {
         .content{
             display: block;
             width: 100%;
-            //min-height: 50vh;
         }
         
         p{
@@ -705,7 +691,6 @@ and (max-width : 667px) {
             margin-left: 0vw;
             margin-top: 5%;
             position: relative;
-            // top: 10px;
 
             div{
                 width: 100%;
@@ -723,14 +708,9 @@ and (max-width : 667px) {
                 width: 23vw;
             }
 
-            
-            
             .earth{
                 height: 100%;
                 width: 100%;
-                
-               
-
             }
         }
 
@@ -756,7 +736,6 @@ and (max-width : 667px) {
     #page2{
         grid-template-columns: auto;
         grid-template-rows: auto auto;
-        // padding-top: 0;
         h1 {
             grid-column-start: auto;
             grid-column-end: auto;
@@ -892,10 +871,6 @@ and (max-width : 667px) {
 
                 }
             }
-            .card:hover{
-               // transform: scale(1,1); 
-            }
-
         }
     }
 }
