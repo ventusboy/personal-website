@@ -12,7 +12,7 @@ class Projects extends React.Component {
 
     componentDidMount () {
         // eslint-disable-next-line
-        axios.get('http://localhost:5000/portfolio-610be/us-central1/api/getProjects'||'/api/getProjects').
+        axios.get('/getProjects').
             then(({ data }) => {
                 let projectsArray = []
                 for (const key in data) {

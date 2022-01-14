@@ -65,6 +65,10 @@ body{
     } 
 }
 
+*{
+    scroll-margin-top: 70px;
+}
+
 .logo{
     height: 100%;
     float: left;
@@ -856,7 +860,7 @@ and (max-width : 667px) {
                     }
                     p{
                         padding: 10px;
-                        font-size: 1em;
+                        font-size: 1.2em;
                         height: fit-content;
                     }
                 }

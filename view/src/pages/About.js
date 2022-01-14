@@ -10,8 +10,12 @@ class About extends React.Component {
         }
     }
     async componentDidMount () {
-        let { data } = await axios.get('http://localhost:5000/portfolio-610be/us-central1/api/getAbout')
-        console.log(data)
+        const baseURL = 'https://us-central1-portfolio-610be.cloudfunctions.net' || 'http://localhost:5000/portfolio-610be/us-central1'
+        
+        let { data } = await axios.get('/getAbout').catch((err) => {
+            console.log(err)
+        })
+        // console.log(data)
         let languages = data.languages.sort((a, b) => {
             return b.length - a.length
         })

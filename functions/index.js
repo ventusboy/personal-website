@@ -6,7 +6,7 @@ const cors = require('cors')({origin: '*'});
 
 app.use(cors)
 app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     res.setHeader('Access-Control-Allow-Credentials', true);
@@ -21,17 +21,13 @@ app.use(function (req, res, next) {
 //   response.send("Hello from Firebase!");
 // });
 
-const {
-    getWebsiteData
-} = require('./API/data')
-
 app.get('/getAbout', (req, res) => {
     db
         .collection('data')
         .doc('WMAA00bAtbJH8f6T7CPj')
         .get()
 		.then((doc) => {
-            console.log(doc.data())
+            // console.log(doc.data())
             let data = doc.data()
 			return res.json(data);
 		})
@@ -47,7 +43,7 @@ app.get('/getProjects', (req, res) => {
         .doc('projects')
         .get()
 		.then((doc) => {
-            console.log(doc.data())
+            // console.log(doc.data())
             let data = doc.data()
 			return res.json(data);
 		})

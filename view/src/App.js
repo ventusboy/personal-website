@@ -8,14 +8,15 @@ import { useState } from 'react';
 
 function App() {
   
-  // function toggleMenu() {
   const [ toggleMenu, setToggleMenu ] = useState(false)
-  // }
+  
   function animate () {
     return toggleMenu ? 'slide-left' : 'slide-right';
   }
   function goTo (page) {
-    window.location.href=`#page${page}`
+    // window.location.href=`#page${page}`
+    var pageAnchor = document.getElementById(`page${page}`)
+    pageAnchor.scrollIntoView()
     setToggleMenu(false)
   }
 

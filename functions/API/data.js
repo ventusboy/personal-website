@@ -1,19 +1,3 @@
-/* exports.getWebsiteData = (request, response) => {
-    data = [
-        {
-            'id': '1',
-            'title': 'greeting',
-            'body': 'Hello world from sharvin shah' 
-        },
-        {
-            'id': '2',
-            'title': 'greeting2',
-            'body': 'Hello2 world2 from sharvin shah' 
-        }
-    ]
-    return response.json(data);
-}
- */
 const { db } = require('../util/admin');
 
 exports.getWebsiteData = (request, response) => {
@@ -21,8 +5,8 @@ exports.getWebsiteData = (request, response) => {
         .collection('data')
         .doc('projects')
         .get()
-		.then((doc) => {
-            console.log(doc.data())
+		.then((doc) =>{
+            // console.log(doc.data())
             let headers = doc.data()
 			return response.json(headers);
 		})

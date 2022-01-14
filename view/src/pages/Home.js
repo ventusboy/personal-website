@@ -3,22 +3,17 @@ import React, { useRef } from 'react';
 function Page1() {
 
     const floatingIconHolder = useRef()
-    // let links = document.querySelectorAll('.assorted1 div div a')
     let stopFloating = function (e) {
-        let links = document.querySelectorAll('.assorted1 div div a')// .style = { animationPlayState: 'paused' }
+        let links = document.querySelectorAll('.assorted1 div div a')
         links.forEach(element => {
             element.style.animationPlayState = 'paused';
         });
-        // console.log(document.querySelectorAll('.assorted1 div div a'))
-        // floatingIconHolder.current().
-        // e.target.style.transform = 'scale(1.2, 1.2)';
     }
     function keepFloating(e) {
         let links = document.querySelectorAll('.assorted1 div div a')
         links.forEach(element => {
             element.style.animationPlayState = 'running';
         });
-        //e.target.style.transform = 'scale(.8, .8)';
     }
     return (
         <div id="page1" className="page">
@@ -88,8 +83,6 @@ function Page1() {
                 {/* <div className="desktopbg"></div> */}
                 <img src="/assets/img/Component61.svg" id="desktop" alt="Designed by Mikal Young" />
             </div>
-
-            <div id="anchor2" className="anchor"></div>
         </div>
     )
 }

@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios'
 
-const baseURL = 'http://localhost:5000';
+const baseURL = process.env.DEVELOPMENT ? 'http://localhost:5000' : 'https://us-central1-portfolio-610be.cloudfunctions.net/api';
 if (typeof baseURL !== 'undefined') {
   axios.defaults.baseURL = baseURL;
 }
