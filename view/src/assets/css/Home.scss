@@ -1,0 +1,168 @@
+#page1 {
+    display: flex;
+    flex-flow: wrap;
+
+    .content {
+        background: rgba(0, 0, 0, 0.589);
+        height: auto;
+        width: 55%;
+        display: inline-block;
+        z-index: 4;
+        position: relative;
+    }
+
+    h1 {
+        background: rgba(255, 254, 254, 0.719);
+        margin-left: 0;
+        width: 100%;
+        height: 30%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            width: 50%
+        }
+    }
+
+    .indent {
+        margin-left: 40px;
+    }
+
+    p {
+        padding: 1em;
+        padding-left: 7%;
+        padding-right: 8%;
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+        color: white;
+    }
+
+    .bookholder {
+        display: inline-block;
+        position: relative;
+        width: 40%;
+        height: 70%;
+        z-index: 1;
+
+        #desktop {
+            width: 100%;
+            position: relative;
+            z-index: 3;
+        }
+
+        .desktopbg {
+            position: absolute;
+            top: 17%;
+            left: 15%;
+            width: 25vw;
+            height: 25vw;
+            background: rgba(255, 254, 254, 0.719);
+            transform: rotateZ(45deg);
+            z-index: 2;
+        }
+
+    }
+
+
+    .assorted1 {
+        position: relative;
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        margin-top: 10%;
+
+        div {
+            height: 100%;
+            display: flex;
+            width: 100%;
+            flex-flow: row;
+            position: relative;
+            justify-content: center;
+
+            div {
+                position: relative;
+                display: flex;
+                z-index: 2;
+                width: 15%;
+                align-items: center;
+
+                @for $i from 0 through 4 {
+                    &:nth-child(#{$i}) {
+                        a {
+                            animation-delay: ($i * 250ms)
+                        }
+                    }
+                }
+
+                span {
+                    &:hover {
+                        transform: scale(1.2, 1.2);
+                    }
+
+                    height: 100%;
+                    width: 100%;
+
+                    a {
+                        display: block;
+                        height: 100%;
+                        width: 100%;
+                        transition: all .1s ease-in-out;
+
+                        @media only screen and (min-width: 768px) {
+                            animation-name: floating;
+                            animation-duration: 3s;
+                            animation-iteration-count: infinite;
+                            animation-timing-function: ease-in-out;
+                        }
+
+                        @keyframes floating {
+                            0% {
+                                transform: translate(0, 0px);
+                            }
+
+                            50% {
+                                transform: translate(0, 15px);
+                            }
+
+                            100% {
+                                transform: translate(0, -0px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .assorted1> :nth-child(2) {
+        position: relative;
+    }
+
+    .earth {
+        height: 100%;
+        width: 100%;
+        transform: scale(.8, .8);
+    }
+
+    @keyframes floater {
+        0% {
+            padding-top: 0px;
+        }
+
+        50% {
+            padding-top: 7px;
+        }
+
+        100% {
+            padding-top: 0px;
+        }
+    }
+}
+
