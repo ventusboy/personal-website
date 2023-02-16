@@ -1,18 +1,10 @@
 import React from 'react';
 import { Box, Divider, Typography, Container, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { BoldDivider } from './../components/CustomComponents';
 
 function Home() {
 
-    const BoldDivider = styled(Divider)({
-        margin: '16px 0',
-        borderWidth: '2px',
-        borderColor: 'black',
-        '&::before, &::after': {
-            borderTopWidth: '2px',
-            borderTopColor: 'black'
-        },
-    })
 
     const NavButton = styled(Button)({
         padding: "0px 0px",
@@ -54,7 +46,7 @@ function Home() {
     return (
         <Container
             id="Home"
-            //className="page"
+        //className="page"
         >
             <Typography
                 variant='h4'
@@ -64,7 +56,11 @@ function Home() {
                 <Box marginLeft={0}>one line of code at a time.</Box>
             </Typography>
 
-            <BoldDivider />
+            <BoldDivider
+                sx={{
+                    margin: '16px 0'
+                }}
+            />
 
             <Box
                 display={'flex'}
