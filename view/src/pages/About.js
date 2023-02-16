@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Box, Container, Tab, Tabs, Typography } from '@mui/material';
 import { BoldDivider } from "../components/CustomComponents";
+import { styled } from '@mui/material/styles';
 
 function About(props) {
     /* constructor (props) {
@@ -14,7 +15,7 @@ function About(props) {
     } */
     const [languages, setLanguages] = useState([])
     const [tools, setTools] = useState([])
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState(0)
 
 
     useEffect(() => {
@@ -38,8 +39,8 @@ function About(props) {
 
 
     return (
-        <Container
-            id="About"
+        <CenteredBox
+        //id="About"
         >
             <Typography
                 variant="h4"
@@ -47,33 +48,51 @@ function About(props) {
             >
                 {'About Me'}
             </Typography>
-            <Tabs
-                value={value}
-                onChange={handleChange}
-                aria-label="skills"
-            >
-                <Tab label="Languages I Know">
-                    {"Languages I Know"}
-                </Tab>
-                <Tab label="Tools I Use">
-                    {"Tools I Use"}
-                </Tab>
+            <CenteredBox
+                //width={.7}
 
-            </Tabs>
-            <Box>
-                {
-                    (value === 0 ? tools : languages).map((element) => {
-                                return (
-                        <Typography
-                            key={element}
-                            variant={'h6'}
-                        >
-                            {element}
-                        </Typography>
-                        )
-                    })
-                }
-            </Box>
+            >
+
+
+                <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    aria-label="skills"
+                    variant="fullWidth"
+                    textColor={'primary'}
+                    indicatorColor={'primary'}
+                    centered
+                >
+                    <Tab label="Languages I Know">
+                        {"Languages I Know"}
+                    </Tab>
+                    <Tab label="Tools I Use">
+                        {"Tools I Use"}
+                    </Tab>
+
+                </Tabs>
+                <CenteredBox
+                    //padding={'12px'}
+                    minHeight={'320px'}
+                    width={1}
+                    sx={{
+                        alignItems: value === 0 ? 'start' : 'end'
+                    }}
+                >
+                    {
+                        (value === 0 ? tools : languages).map((element, index) => {
+                            return (
+                                <Typography
+                                    key={element}
+                                    variant={'h6'}
+                                >
+                                    {element}
+                                </Typography>
+                            )
+                        })
+                    }
+                </CenteredBox>
+            </CenteredBox>
 
             {/* <Box
                 display={'flex'}
@@ -146,9 +165,15 @@ function About(props) {
             </div>
             <div className="tri"></div>
             <div id="anchor3" className="anchor"></div>
-        </Container>
+        </CenteredBox>
     )
 
 }
+
+const CenteredBox = styled(Box)({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+})
 
 export default About
