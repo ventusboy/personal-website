@@ -1,90 +1,103 @@
-import React, { useRef } from 'react';
+import React from 'react';
+import { Box, Divider, Typography, Container, Button } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
-function Page1() {
+function Home() {
 
-    const floatingIconHolder = useRef()
-    let stopFloating = function (e) {
-        let links = document.querySelectorAll('.assorted1 div div a')
-        links.forEach(element => {
-            element.style.animationPlayState = 'paused';
-        });
+    const BoldDivider = styled(Divider)({
+        margin: '16px 0',
+        borderWidth: '2px',
+        borderColor: 'black',
+        '&::before, &::after': {
+            borderTopWidth: '2px',
+            borderTopColor: 'black'
+        },
+    })
+
+    const NavButton = styled(Button)({
+        padding: "0px 0px",
+        borderRadius: 0,
+        backgroundColor: "transparent",
+        color: "black",
+        textTransform: 'none',
+        "&:hover": {
+            backgroundColor: "transparent",
+        }
+
+    });
+
+    function ExternalLink(props) {
+        return (
+            <NavButton
+                sx={{
+                    width: props.width
+                }}
+                onClick={props.onClick}
+            >
+                <BoldDivider
+                    sx={{
+                        width: '100%',
+                        transition: '.5s ease',
+                        margin: '4px 0',
+                        "&:hover": {
+                            transform: 'scale(1.3)',
+                        }
+                    }}
+                >
+                    {props.children}
+                </BoldDivider>
+            </NavButton>
+        )
     }
-    function keepFloating(e) {
-        let links = document.querySelectorAll('.assorted1 div div a')
-        links.forEach(element => {
-            element.style.animationPlayState = 'running';
-        });
-    }
+
+
     return (
-        <div id="page1" className="page">
-            <div id="anchor1" className="anchor"></div>
-            <h1>
-                <div>Making Ideas come to life, <br className="hide-on-mobile" />
-                    <span className="indent" id="indent1">one line of code at a time.</span>
-                </div>
-            </h1>
+        <Container
+            id="Home"
+            //className="page"
+        >
+            <Typography
+                variant='h4'
+                marginTop={7}
+            >
+                Bringing Ideas to life, <br className="hide-on-mobile" />
+                <Box marginLeft={0}>one line of code at a time.</Box>
+            </Typography>
 
-            <div className="content">
-                <p>
-                    <span className="indent"></span>Hi! My name is Mikal Young and I'm a software
-                    developer based in South Florida with a focus in Android and Web Development.
-                    Learning is my passion, and problem solving is my hobby.<br /><br />
-                </p>
-                <div className="assorted1">
-                    <div ref={floatingIconHolder}>
-                        <div
-                            onMouseEnter={stopFloating}
-                            onMouseLeave={keepFloating}
-                        >
-                            <span>
-                                <a href="https://www.linkedin.com/in/mikal-young-6772a516a" target="_blank" rel="noopener noreferrer">
-                                    <img src="/assets/img/linkedin-svg.svg" alt="earth" className="earth" id="earth1" />
-                                </a>
-                            </span>
-                        </div>
+            <BoldDivider />
 
-                        <div
-                            onMouseEnter={stopFloating}
-                            onMouseLeave={keepFloating}
-                        >
-                            <span>
-                                <a href="https://github.com/ventusboy" target="_blank" rel="noopener noreferrer">
-                                    <img src="/assets/img/github-svg.svg" alt="earth" className="earth" id="earth2" />
-                                </a>
-                            </span>
-                        </div>
+            <Box
+                display={'flex'}
+                flexDirection={'column'}
+                alignItems={'center'}
+            >
+                <Typography
+                    variant='h6'
+                    textAlign={'center'}
+                    width={.8}
 
-                        <div
-                            onMouseEnter={stopFloating}
-                            onMouseLeave={keepFloating}
-                        >
-                            <span>
-                                <a href="mailto:mikalmyoung@gmail.com.com" target="_blank" rel="noopener noreferrer">
-                                    <img src="/assets/img/email-svg.svg" alt="earth" className="earth" id="earth3" />
-                                </a>
-                            </span>
-                        </div>
+                >
+                    Hi! My name is Mikal Young and I am a Software
+                    Engineer based in Central Florida. I specialize in
+                    FullStack Web Development using various tools and frameworks.
+                    Learning is my passion, and problem solving is my hobby.
+                </Typography>
+                <Box
+                    width={.4}
+                    alignItems={'center'}
+                    display={'flex'}
+                    flexDirection={'column'}
+                    margin={'16px 0'}
+                >
+                    <ExternalLink width={'90%'}>Linkedin</ExternalLink>
+                    <ExternalLink width={'80%'}>Github</ExternalLink>
+                    <ExternalLink width={'70%'}>Email Me</ExternalLink>
+                    <ExternalLink width={'60%'}>Upwork</ExternalLink>
+                </Box>
 
-                        <div
-                            onMouseEnter={stopFloating}
-                            onMouseLeave={keepFloating}
-                        >
-                            <span>
-                                <a href="https://www.upwork.com/o/profiles/users/_~01f898c51eb6ad6854/" target="_blank" rel="noopener noreferrer">
-                                    <img src="/assets/img/upwork-svg.svg" alt="earth" className="earth" id="earth4" />
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="bookholder">
-                {/* <div className="desktopbg"></div> */}
-                <img src="/assets/img/Component61.svg" id="desktop" alt="Designed by Mikal Young" />
-            </div>
-        </div>
+            </Box>
+        </Container>
     )
 }
 
-export default Page1
+export default Home
