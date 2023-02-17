@@ -25,19 +25,15 @@ function App() {
 
 			<div className="App">
 				{/* <BackGround /> */}
-
-				<Container>
+				<Box>
 					<NavBar setToggleMenu={setToggleMenu} />
+
 					<Box>
 						<Home />
 						<About />
 						{/*<Projects /> */}
 					</Box>
-				</Container>
-
-				<div id='pages'>
-
-				</div>
+				</Box>
 			</div>
 		</ThemeProvider>
 
@@ -57,7 +53,7 @@ function NavBar(props) {
 
 	const NavButton = styled(Button)({
 		padding: "6px 16px",
-		margin: '0 6px',
+		margin: '0 8px',
 		marginTop: '4px',
 		flexDirection: 'column',
 		borderRadius: 0,
@@ -85,10 +81,20 @@ function NavBar(props) {
 			display='flex'
 			flexDirection='row'
 			alignItems={'center'}
+			sx={{
+				backgroundColor: (theme) => theme.palette.secondary.main,
+				top: 0,
+				position: 'sticky',
+				borderBottom: 'solid 1px black'
+			}}
 		>
 			<Typography
-				variant='h3'
+				variant='h4'
+				component={'h1'}
+				margin={'12px'}
 				marginRight={'auto'}
+				marginLeft={'24px'}
+				fontWeight={'500'}
 			>
 				{'Mikal Young'}
 			</Typography>

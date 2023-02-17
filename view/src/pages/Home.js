@@ -70,7 +70,7 @@ function Home() {
                 <Typography
                     variant='h6'
                     textAlign={'center'}
-                    width={.8}
+                    width={.7}//.8}
 
                 >
                     Hi! My name is Mikal Young and I am a Software

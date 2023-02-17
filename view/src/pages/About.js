@@ -39,133 +39,125 @@ function About(props) {
 
 
     return (
-        <CenteredBox
-        //id="About"
-        >
+        <Container>
             <Typography
-                variant="h4"
+                variant="h3"
                 margin={'64px 0'}
             >
                 {'About Me'}
             </Typography>
-            <CenteredBox
-                //width={.7}
-
-            >
-
-
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    aria-label="skills"
-                    variant="fullWidth"
-                    textColor={'primary'}
-                    indicatorColor={'primary'}
-                    centered
-                >
-                    <Tab label="Languages I Know">
-                        {"Languages I Know"}
-                    </Tab>
-                    <Tab label="Tools I Use">
-                        {"Tools I Use"}
-                    </Tab>
-
-                </Tabs>
-                <CenteredBox
-                    //padding={'12px'}
-                    minHeight={'320px'}
-                    width={1}
-                    sx={{
-                        alignItems: value === 0 ? 'start' : 'end'
-                    }}
-                >
-                    {
-                        (value === 0 ? tools : languages).map((element, index) => {
-                            return (
-                                <Typography
-                                    key={element}
-                                    variant={'h6'}
-                                >
-                                    {element}
-                                </Typography>
-                            )
-                        })
-                    }
-                </CenteredBox>
-            </CenteredBox>
-
-            {/* <Box
+            <Box
+                //id="About"
                 display={'flex'}
+                width={1}
                 justifyContent={'space-between'}
             >
+
                 <Box
-                    width={.4}
+                    display={'flex'}
+                    //justifyContent={'space-around'}
+                    flexDirection={'column'}
+                    width={.3}
                 >
-
-
-                    <Typography
-                        variant="h5"
-                        textAlign={'center'}
+                    <Box
+                        marginBottom={'24px'}
                     >
-                        {'Languages Spoken'}
-                    </Typography>
+                        <Typography
+                            variant="h5"
+                            textAlign={'center'}
+                        >
+                            {"Languages I Know"}
+                        </Typography>
+                        <BoldDivider
+                            sx={{
+                                margin: '12px 0'
+                            }}
+                        />
 
+                        <Box
+                            display={'flex'}
+                            flexWrap={'wrap'}
+                            width={1}
+                        >
+                            {
+                                languages.map((element, index) => {
+                                    return (
+                                        <Typography
+                                            key={element}
+                                            variant={'h6'}
+                                            width={'fit-content'}
+                                            marginRight={'16px'}
+                                        >
+                                            {element}
+                                        </Typography>
+                                    )
+                                })
+                            }
+                        </Box>
+                    </Box>
+                    <Box>
+                        <Typography
+                            variant="h5"
+                            textAlign={'center'}
+                        >
+                            {"Tools I Use"}
+                        </Typography>
+                        <BoldDivider
+                            sx={{
+                                margin: '12px 0'
+                            }}
+                        />
 
-                    {languages.map((language) => {
-                        return (
-                            <Typography
-                                key={language}
-                                variant={'h6'}
-                            >
-                                {language}
-                            </Typography>
-                        )
-                    })}
-
+                        <Box
+                            display={'flex'}
+                            flexWrap={'wrap'}
+                            justifyContent={'flex-end'}
+                            width={1}
+                        >
+                            {
+                                tools.map((element, index) => {
+                                    return (
+                                        <Typography
+                                            key={element}
+                                            variant={'h6'}
+                                            width={'fit-content'}
+                                            marginRight={'16px'}
+                                        >
+                                            {element}
+                                        </Typography>
+                                    )
+                                })
+                            }
+                        </Box>
+                    </Box>
                 </Box>
 
                 <Box
-                    width={.4}
+                    display={'flex'}
+                    flexDirection={'column'}
+                    justifyContent={'center'}
+                    width={.65}
                 >
                     <Typography
-                        variant="h5"
-                    //textAlign={'center'}
+                        variant={'body1'}
                     >
-                        {'Tools I Use'}
-
+                        My developer story starts at the University Of Central Florida
+                        where I took my first programming class. I quickly noticed I could
+                        pursue my love of problem solving, while also learning skills 
+                        I could continuously improve on and use to help others.<br /><br />
                     </Typography>
-
-                    {tools.map((tool) => {
-                        return (
-                            <Typography
-                                key={tool}
-                                variant={'h6'}
-                            >
-                                {tool}
-                            </Typography>
-                        )
-                    })}
+                    <Typography
+                        variant={'body1'}
+                    >
+                        I pride myself in my ability to go above and beyond
+                        for tasks given to me and my attention to detail. Every second spent developing is an
+                        opportunity
+                        for me to learn something new that I can carry into the future, into other languages, and into
+                        my life.
+                    </Typography>
                 </Box>
-
-            </Box> */}
-            <div className="contain">
-                <p className="">
-                    My developer story starts at the at the University Of Central Florida
-                    where I took my first programming class. For the first time ever I was
-                    enjoying solving academic problems and learning skills that I could use
-                    in my daily life, and the rest was history.<br /><br />
-                </p>
-                <p>
-                    I pride myself in my ability to go above and beyond
-                    for tasks given to me and my attention to detail. Every second spent developing is an
-                    opportunity
-                    for me to learn something new that I can carry into the future, into other languages, and into
-                    my life.
-                </p>
-            </div>
-            <div className="tri"></div>
-            <div id="anchor3" className="anchor"></div>
-        </CenteredBox>
+            </Box>
+        </Container>
     )
 
 }

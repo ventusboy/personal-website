@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 export const BoldDivider = styled(Divider)({
     //margin: '16px 0',
     //height: 'auto',
-    borderWidth: '2px',
+    borderWidth: '1px',
     borderColor: 'black',
     '&::before, &::after': {
         borderTopWidth: '2px',
