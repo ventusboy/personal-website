@@ -85,7 +85,8 @@ function NavBar(props) {
 				backgroundColor: (theme) => theme.palette.secondary.main,
 				top: 0,
 				position: 'sticky',
-				borderBottom: 'solid 1px black'
+				borderBottom: 'solid 1px black',
+				zIndex: 99
 			}}
 		>
 			<Typography
