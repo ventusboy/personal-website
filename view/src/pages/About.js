@@ -1,9 +1,9 @@
 import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
-import { Box, Chip, Container, Paper, Tab, Tabs, Typography } from '@mui/material';
+import { Box, Container, Paper, Typography } from '@mui/material';
 import { BoldDivider } from "../components/CustomComponents";
-import { styled } from '@mui/material/styles';
+//import { styled } from '@mui/material/styles';
 
 function About(props) {
     /* constructor (props) {
@@ -15,11 +15,10 @@ function About(props) {
     } */
     const [languages, setLanguages] = useState([])
     const [tools, setTools] = useState([])
-    const [value, setValue] = useState(0)
 
 
     useEffect(() => {
-        const baseURL = 'https://us-central1-portfolio-610be.cloudfunctions.net'
+        //const baseURL = 'https://us-central1-portfolio-610be.cloudfunctions.net'
 
         async function initialize() {
             try {
@@ -49,11 +48,6 @@ function About(props) {
         }
         return sortedArray
     }
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-
 
     return (
         <Container id={'About Me'}>
@@ -200,10 +194,5 @@ function About(props) {
 
 }
 
-const CenteredBox = styled(Box)({
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-})
 
 export default About

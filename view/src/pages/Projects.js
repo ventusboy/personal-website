@@ -12,8 +12,8 @@ function Projects(props) {
     const [projects, setProjects] = useState([])
 
     useEffect(() => {
-        axios.get('/getProjects').
-            then(({ data }) => {
+        axios.get('/getProjects')
+            .then(({ data }) => {
                 let projectsArray = Object.keys(data).map((element) => data[element])
                 setProjects(projectsArray.sort((a,b) => a.description.length - b.description.length))
             }).catch(() => {

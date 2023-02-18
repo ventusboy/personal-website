@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Divider, Typography, Container, Button } from '@mui/material';
+import { Box, Typography, Container, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { BoldDivider } from './../components/CustomComponents';
 

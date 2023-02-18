@@ -5,13 +5,13 @@ import Projects from './pages/Projects';
 import React from 'react';
 import './assets/css/main.scss'
 import theme from './Theme';
-import { useState } from 'react';
+//import { useState } from 'react';
 import { Typography, Button, Box, ThemeProvider } from '@mui/material'
 import { styled } from '@mui/material/styles';
 
 function App() {
 
-	const [toggleMenu, setToggleMenu] = useState(false)
+	//const [toggleMenu, setToggleMenu] = useState(false)
 
 	return (
 		<ThemeProvider theme={theme}>
@@ -19,7 +19,7 @@ function App() {
 			<div className="App">
 				{/* <BackGround /> */}
 				<NavBar
-					setToggleMenu={setToggleMenu}
+					//setToggleMenu={setToggleMenu}
 				/>
 				<Box
 					overflow={'auto'}
@@ -51,7 +51,7 @@ function NavBar(props) {
 		// window.location.href=`#page${page}`
 		let pageAnchor = document.getElementById(page)
 		pageAnchor.scrollIntoView({ behavior: 'smooth' })
-		props.setToggleMenu(false)
+		//props.setToggleMenu(false)
 	}
 
 	const NavButton = styled(Button)({
