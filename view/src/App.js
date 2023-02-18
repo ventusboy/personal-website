@@ -26,7 +26,7 @@ function App(props) {
 				behavior: "smooth",
 				block: "start",
 			});
-		}, 100);
+		}, isMobile ? 250 : 0);
 	}
 	function openMenu() {
 		setToggleMenu(true)
@@ -63,14 +63,10 @@ function App(props) {
 			<div className="App">
 				{/* <BackGround /> */}
 
-				<NavBar
-					navOptions={navOptions}
-					openMenu={openMenu}
-					isMobile={isMobile}
-				/>
+
 				<Box
 					overflow={'auto'}
-					height={'calc(100vh - 68px)'}
+					height={'calc(100vh)'}
 					sx={{
 						scrollbarWidth: 'none',
 						'&::-webkit-scrollbar': {
@@ -78,13 +74,18 @@ function App(props) {
 						}
 					}}
 				>
+					<NavBar
+						navOptions={navOptions}
+						openMenu={openMenu}
+						isMobile={isMobile}
+					/>
 					<Drawer
 						anchor={'right'}
 						open={toggleMenu}
 						onClose={closeMenu}
 					>
 						<Stack
-						paddingTop={3}
+							paddingTop={3}
 						>
 							{navOptions}
 						</Stack>
@@ -120,8 +121,8 @@ function NavBar(props) {
 			alignItems={'center'}
 			sx={{
 				backgroundColor: (theme) => theme.palette.secondary.main,
-				//top: 0,
-				//position: 'sticky',
+				top: 0,
+				position: 'sticky',
 				height: props.height || '68px',
 				borderBottom: 'solid 1px black',
 				zIndex: 99
