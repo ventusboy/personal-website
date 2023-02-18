@@ -5,22 +5,54 @@ import Projects from './pages/Projects';
 import React from 'react';
 import './assets/css/main.scss'
 import theme from './Theme';
-//import { useState } from 'react';
-import { Typography, Button, Box, ThemeProvider } from '@mui/material'
+import { useState } from 'react';
+import { Typography, Button, Box, ThemeProvider, Drawer } from '@mui/material'
 import { styled } from '@mui/material/styles';
+import { BoldDivider } from './components/CustomComponents';
+import { useEffect } from 'react';
 
 function App() {
 
-	//const [toggleMenu, setToggleMenu] = useState(false)
+	const [toggleMenu, setToggleMenu] = useState(false)
+	const pages = ['Home', 'About Me', 'Projects']
+
+	const goTo = (page) => (event) => {
+		// window.location.href=`#page${page}`
+		console.log(page)
+		let pageAnchor = document.getElementById(page)
+		pageAnchor.scrollIntoView({ behavior: 'smooth' })
+		setToggleMenu(false)
+	}
+	function openMenu() {
+		setToggleMenu(true)
+	}
+
+	const navOptions = pages.map((page) => {
+		return (
+			<NavButton
+				key={page}
+				variant={'text'}
+				onClick={goTo(page)}
+			>
+				<Typography
+					variant='h5'
+				>
+					{page}
+				</Typography>
+			</NavButton>
+		)
+	})
 
 	return (
 		<ThemeProvider theme={theme}>
 
 			<div className="App">
 				{/* <BackGround /> */}
-				<NavBar
-					//setToggleMenu={setToggleMenu}
-				/>
+				
+					<NavBar
+						navOptions={navOptions}
+						openMenu={openMenu}
+					/>
 				<Box
 					overflow={'auto'}
 					height={'calc(100vh - 68px)'}
@@ -31,6 +63,12 @@ function App() {
 						}
 					}}
 				>
+					<Drawer
+						anchor={'right'}
+						open={toggleMenu}
+					>
+						{navOptions}
+					</Drawer>
 					<Box>
 						<Home />
 						<About />
@@ -44,39 +82,13 @@ function App() {
 }
 
 function NavBar(props) {
+	const [innerWidth, setInnerWidth] = useState(window.innerWidth || 0)
+	useEffect(() => {
+		window.addEventListener("resize", () => {
+			setInnerWidth(window.innerWidth)
+		})
+	},[props])
 
-	const pages = ['Home', 'About Me', 'Projects']
-
-	const goTo = (page) => (event) => {
-		// window.location.href=`#page${page}`
-		let pageAnchor = document.getElementById(page)
-		pageAnchor.scrollIntoView({ behavior: 'smooth' })
-		//props.setToggleMenu(false)
-	}
-
-	const NavButton = styled(Button)({
-		padding: "6px 16px",
-		margin: '0 8px',
-		marginTop: '4px',
-		flexDirection: 'column',
-		borderRadius: 0,
-		backgroundColor: "transparent",
-		color: "black",
-		"&:hover": {
-			backgroundColor: "transparent",
-			'&::after': {
-				transform: 'scaleX(1)',
-			},
-		},
-		'&::after': {
-			content: '" "',
-			backgroundColor: 'black',
-			width: '100%',
-			height: '4px',
-			transform: 'scaleX(0%)',
-			transition: 'all .5s ease'
-		},
-	});
 
 	return (
 		<Box
@@ -103,25 +115,58 @@ function NavBar(props) {
 			>
 				{'Mikal Young'}
 			</Typography>
-			{
-				pages.map((page) => {
-					return (
-						<NavButton
-							key={page}
-							variant={'text'}
-							onClick={goTo(page)}
-						>
-							<Typography
-								variant='h5'
-							>
-								{page}
-							</Typography>
-						</NavButton>
-					)
-				})
+			{innerWidth > 740 ?
+				props.navOptions
+				:
+				<Box
+					height={1}
+					padding={'16px'}
+					display={'flex'}
+					justifyContent={'space-around'}
+					flexDirection={'column'}
+					sx={{
+						aspectRatio: '1/1'
+					}}
+					onClick={props.openMenu}
+				>
+					{[1,2,3].map((index) => {
+						return (
+							<BoldDivider
+							key={index}
+								sx={{
+									borderWidth: '2px'
+								}}
+							/>
+						)
+					})}
+				</Box>
 			}
 		</Box>
 	)
 }
+
+const NavButton = styled(Button)({
+	padding: "6px 16px",
+	margin: '0 8px',
+	marginTop: '4px',
+	flexDirection: 'column',
+	borderRadius: 0,
+	backgroundColor: "transparent",
+	color: "black",
+	"&:hover": {
+		backgroundColor: "transparent",
+		'&::after': {
+			transform: 'scaleX(1)',
+		},
+	},
+	'&::after': {
+		content: '" "',
+		backgroundColor: 'black',
+		width: '100%',
+		height: '4px',
+		transform: 'scaleX(0%)',
+		transition: 'all .5s ease'
+	},
+});
 
 export default App;
