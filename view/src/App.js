@@ -6,7 +6,7 @@ import React from 'react';
 import './assets/css/main.scss'
 import theme from './Theme';
 import { useState } from 'react';
-import { Typography, Button, Box, ThemeProvider, Drawer } from '@mui/material'
+import { Typography, Button, Box, ThemeProvider, Drawer, Stack } from '@mui/material'
 import { styled, responsiveFontSizes } from '@mui/material/styles';
 import { BoldDivider } from './components/CustomComponents';
 import { useEffect } from 'react';
@@ -19,20 +19,20 @@ function App(props) {
 	const pages = ['Home', 'About Me', 'Projects']
 
 	const goTo = (page) => (event) => {
-		// window.location.href=`#page${page}`
-		console.log(page)
 		let pageAnchor = document.getElementById(page)
-		//pageAnchor.scrollIntoView({ behavior: 'smooth' })
 		setToggleMenu(false)
 		setTimeout(function () {
 			pageAnchor.scrollIntoView({
 				behavior: "smooth",
 				block: "start",
 			});
-	   }, 100);
+		}, 100);
 	}
 	function openMenu() {
 		setToggleMenu(true)
+	}
+	function closeMenu() {
+		setToggleMenu(false)
 	}
 	useEffect(() => {
 		window.addEventListener("resize", () => {
@@ -81,8 +81,14 @@ function App(props) {
 					<Drawer
 						anchor={'right'}
 						open={toggleMenu}
+						onClose={closeMenu}
 					>
-						{navOptions}
+						<Stack
+						paddingTop={3}
+						>
+							{navOptions}
+						</Stack>
+
 					</Drawer>
 					<Box>
 						<Home

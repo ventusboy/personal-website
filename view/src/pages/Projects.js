@@ -84,7 +84,7 @@ function Projects(props) {
 
                                     <Typography
                                         variant="body1"
-                                        //textAlign={'left'}
+                                        textAlign={props.isMobile ? 'left' : 'center'}
                                         padding={'16px'}
                                         sx={{
                                             textIndent: '24px'

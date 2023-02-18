@@ -62,13 +62,14 @@ function About(props) {
                 display={'flex'}
                 width={1}
                 justifyContent={'space-between'}
+                flexDirection={props.isMobile ? 'column' : 'row'}
             >
 
                 <Box
                     display={'flex'}
                     //justifyContent={'space-around'}
                     flexDirection={'column'}
-                    width={.3}
+                    width={props.isMobile ? 1 : .3}
                 >
                     <Paper
                         elevation={4}
@@ -161,11 +162,12 @@ function About(props) {
                     display={'flex'}
                     flexDirection={'column'}
                     justifyContent={'center'}
-                    width={.65}
+                    marginTop={props.isMobile ? 4: 0}
+                    width={props.isMobile ? 1 : .65}
                 >
                     <Typography
                         variant={'body1'}
-                        textAlign={'left'}
+                        textAlign={props.isMobile ? 'center' : 'left'}
                         sx={{
                             textIndent: '24px'
                         }}
@@ -177,7 +179,7 @@ function About(props) {
                     </Typography>
                     <Typography
                         variant={'body1'}
-                        textAlign={'left'}
+                        textAlign={props.isMobile ? 'center' : 'left'}
                         sx={{
                             textIndent: '24px'
                         }}
