@@ -25,13 +25,15 @@ function App() {
 
 			<div className="App">
 				{/* <BackGround /> */}
-				<Box>
+				<Box
+					paddingBottom={'72px'}
+				>
 					<NavBar setToggleMenu={setToggleMenu} />
 
 					<Box>
 						<Home />
 						<About />
-						{/*<Projects /> */}
+						<Projects />
 					</Box>
 				</Box>
 			</div>
@@ -103,6 +105,7 @@ function NavBar(props) {
 				pages.map((page) => {
 					return (
 						<NavButton
+						key={page}
 							variant={'text'}
 						>
 							<Typography
