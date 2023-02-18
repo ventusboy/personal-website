@@ -1,12 +1,22 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme  } from '@mui/material/styles';
 
-const theme = createTheme({
+let theme = createTheme({
     typography:{
         fontFamily: ['Montserrat-Medium', 'sans-serif'].join(','),
         body1:{
             fontSize: '20px',
             fontWeight: '500'
-        }
+        },
+        h4:{
+            //fontSize: '20px'
+            '@media (max-width:740px)':{
+                //fontSize: '1rem'
+            }
+        },
+        
+
+        
+    
     },
     palette: {
         primary:{
@@ -20,4 +30,4 @@ const theme = createTheme({
   });
 
 
-  export default theme
+  export default theme;

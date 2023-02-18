@@ -3,7 +3,7 @@ import { Box, Typography, Container, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { BoldDivider } from './../components/CustomComponents';
 
-function Home() {
+function Home(props) {
 
 
     const NavButton = styled(Button)({
@@ -49,8 +49,8 @@ function Home() {
         'https://www.upwork.com/o/profiles/users/_~01f898c51eb6ad6854/'
     ]
 
-    function openLink(index){
-        return function (){
+    function openLink(index) {
+        return function () {
             window.open(links[index], '_blank').focus();
         }
     }
@@ -64,7 +64,7 @@ function Home() {
                 variant='h4'
                 paddingTop={7}
             >
-                Bringing Ideas to life, <br className="hide-on-mobile" />
+                Bringing Ideas to life,
                 <Box marginLeft={0}>one line of code at a time.</Box>
             </Typography>
 
@@ -80,9 +80,9 @@ function Home() {
                 alignItems={'center'}
             >
                 <Typography
-                    variant='h6'
+                    variant='body1'
                     textAlign={'center'}
-                    width={.7}//.8}
+                    width={props.isMobile ? 1 : .7}
 
                 >
                     Hi! My name is Mikal Young and I am a Software
@@ -91,7 +91,7 @@ function Home() {
                     Learning is my passion, and problem solving is my hobby.
                 </Typography>
                 <Box
-                    width={.4}
+                    width={props.isMobile ? .9 : .4}
                     alignItems={'center'}
                     display={'flex'}
                     flexDirection={'column'}

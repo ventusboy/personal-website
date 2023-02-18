@@ -7,25 +7,38 @@ import './assets/css/main.scss'
 import theme from './Theme';
 import { useState } from 'react';
 import { Typography, Button, Box, ThemeProvider, Drawer } from '@mui/material'
-import { styled } from '@mui/material/styles';
+import { styled, responsiveFontSizes } from '@mui/material/styles';
 import { BoldDivider } from './components/CustomComponents';
 import { useEffect } from 'react';
 
-function App() {
+function App(props) {
 
 	const [toggleMenu, setToggleMenu] = useState(false)
+	const [isMobile, setIsMobile] = useState(window.innerWidth < 740)
+
 	const pages = ['Home', 'About Me', 'Projects']
 
 	const goTo = (page) => (event) => {
 		// window.location.href=`#page${page}`
 		console.log(page)
 		let pageAnchor = document.getElementById(page)
-		pageAnchor.scrollIntoView({ behavior: 'smooth' })
+		//pageAnchor.scrollIntoView({ behavior: 'smooth' })
 		setToggleMenu(false)
+		setTimeout(function () {
+			pageAnchor.scrollIntoView({
+				behavior: "smooth",
+				block: "start",
+			});
+	   }, 100);
 	}
 	function openMenu() {
 		setToggleMenu(true)
 	}
+	useEffect(() => {
+		window.addEventListener("resize", () => {
+			setIsMobile(window.innerWidth < 740)
+		})
+	}, [props])
 
 	const navOptions = pages.map((page) => {
 		return (
@@ -43,16 +56,18 @@ function App() {
 		)
 	})
 
+
 	return (
-		<ThemeProvider theme={theme}>
+		<ThemeProvider theme={responsiveFontSizes(theme)}>
 
 			<div className="App">
 				{/* <BackGround /> */}
-				
-					<NavBar
-						navOptions={navOptions}
-						openMenu={openMenu}
-					/>
+
+				<NavBar
+					navOptions={navOptions}
+					openMenu={openMenu}
+					isMobile={isMobile}
+				/>
 				<Box
 					overflow={'auto'}
 					height={'calc(100vh - 68px)'}
@@ -70,9 +85,15 @@ function App() {
 						{navOptions}
 					</Drawer>
 					<Box>
-						<Home />
-						<About />
-						<Projects />
+						<Home
+							isMobile={isMobile}
+						/>
+						<About
+							isMobile={isMobile}
+						/>
+						<Projects
+							isMobile={isMobile}
+						/>
 					</Box>
 				</Box>
 			</div>
@@ -82,12 +103,7 @@ function App() {
 }
 
 function NavBar(props) {
-	const [innerWidth, setInnerWidth] = useState(window.innerWidth || 0)
-	useEffect(() => {
-		window.addEventListener("resize", () => {
-			setInnerWidth(window.innerWidth)
-		})
-	},[props])
+
 
 
 	return (
@@ -115,7 +131,7 @@ function NavBar(props) {
 			>
 				{'Mikal Young'}
 			</Typography>
-			{innerWidth > 740 ?
+			{!props.isMobile ?
 				props.navOptions
 				:
 				<Box
@@ -129,10 +145,10 @@ function NavBar(props) {
 					}}
 					onClick={props.openMenu}
 				>
-					{[1,2,3].map((index) => {
+					{[1, 2, 3].map((index) => {
 						return (
 							<BoldDivider
-							key={index}
+								key={index}
 								sx={{
 									borderWidth: '2px'
 								}}
