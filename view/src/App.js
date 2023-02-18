@@ -63,10 +63,15 @@ function App(props) {
 			<div className="App">
 				{/* <BackGround /> */}
 
-
+				<NavBar
+					navOptions={navOptions}
+					openMenu={openMenu}
+					isMobile={isMobile}
+				/>
 				<Box
 					overflow={'auto'}
-					height={'calc(100vh)'}
+					height={'calc(100vh - 68px)'}
+					//paddingTop={'68px'}
 					sx={{
 						scrollbarWidth: 'none',
 						'&::-webkit-scrollbar': {
@@ -74,11 +79,7 @@ function App(props) {
 						}
 					}}
 				>
-					<NavBar
-						navOptions={navOptions}
-						openMenu={openMenu}
-						isMobile={isMobile}
-					/>
+
 					<Drawer
 						anchor={'right'}
 						open={toggleMenu}
@@ -91,7 +92,10 @@ function App(props) {
 						</Stack>
 
 					</Drawer>
-					<Box>
+					<Box
+						//paddingTop={'68px'}
+						marginTop={'68px'}
+					>
 						<Home
 							isMobile={isMobile}
 						/>

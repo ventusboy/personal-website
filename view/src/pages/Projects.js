@@ -41,6 +41,7 @@ function Projects(props) {
                 width={1}
                 container
                 spacing={{ md: 2 }}
+                paddingBottom={6}
             >
                 {projects.map(({ description, name, link }) => {
                     return (
