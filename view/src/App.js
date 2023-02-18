@@ -39,8 +39,8 @@ function App(props) {
 		if(toggleMenu === true)
 			return
 
-		//if(scrollTo === '')
-		//	return
+		if(scrollTo === '')
+			return
 		//console.log(scrollTo)
 
 		let pageAnchor = document.getElementById(scrollTo)
