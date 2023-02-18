@@ -14,19 +14,14 @@ import { useEffect } from 'react';
 function App(props) {
 
 	const [toggleMenu, setToggleMenu] = useState(false)
+	const [scrollTo, setScrollTo] = useState('')
 	const [isMobile, setIsMobile] = useState(window.innerWidth < 740)
 
 	const pages = ['Home', 'About Me', 'Projects']
 
 	const goTo = (page) => (event) => {
-		let pageAnchor = document.getElementById(page)
+		setScrollTo(page)
 		setToggleMenu(false)
-		setTimeout(function () {
-			pageAnchor.scrollIntoView({
-				behavior: "smooth",
-				block: "start",
-			});
-		}, isMobile ? 250 : 0);
 	}
 	function openMenu() {
 		setToggleMenu(true)
@@ -39,6 +34,26 @@ function App(props) {
 			setIsMobile(window.innerWidth < 740)
 		})
 	}, [props])
+
+	useEffect(()=>{
+		if(toggleMenu === true)
+			return
+
+		//if(scrollTo === '')
+		//	return
+		//console.log(scrollTo)
+
+		let pageAnchor = document.getElementById(scrollTo)
+		//setTimeout(function () {
+		pageAnchor.scrollIntoView({
+			behavior: "smooth",
+			block: "start",
+		});
+			//setScrollTo('')
+		//closeMenu()
+		//}, isMobile ? 100 : 0);
+
+	}, [toggleMenu, scrollTo, isMobile])
 
 	const navOptions = pages.map((page) => {
 		return (
@@ -60,7 +75,7 @@ function App(props) {
 	return (
 		<ThemeProvider theme={responsiveFontSizes(theme)}>
 
-			<div className="App">
+			<Box className="App">
 				{/* <BackGround /> */}
 
 				<NavBar
@@ -72,6 +87,8 @@ function App(props) {
 					overflow={'auto'}
 					height={'calc(100vh - 68px)'}
 					//paddingTop={'68px'}
+					position={'absolute'}
+					bottom={0}
 					sx={{
 						scrollbarWidth: 'none',
 						'&::-webkit-scrollbar': {
@@ -107,7 +124,7 @@ function App(props) {
 						/>
 					</Box>
 				</Box>
-			</div>
+			</Box>
 		</ThemeProvider>
 
 	);
@@ -123,10 +140,11 @@ function NavBar(props) {
 			display='flex'
 			flexDirection='row'
 			alignItems={'center'}
+			width={1}
 			sx={{
 				backgroundColor: (theme) => theme.palette.secondary.main,
 				top: 0,
-				position: 'sticky',
+				position: 'fixed',
 				height: props.height || '68px',
 				borderBottom: 'solid 1px black',
 				zIndex: 99
