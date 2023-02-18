@@ -59,11 +59,10 @@ function Home() {
     return (
         <Container
             id="Home"
-        //className="page"
         >
             <Typography
                 variant='h4'
-                marginTop={7}
+                paddingTop={7}
             >
                 Bringing Ideas to life, <br className="hide-on-mobile" />
                 <Box marginLeft={0}>one line of code at a time.</Box>

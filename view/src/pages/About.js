@@ -56,7 +56,7 @@ function About(props) {
 
 
     return (
-        <Container>
+        <Container id={'About Me'}>
             <Typography
                 variant="h3"
                 margin={'64px 0'}

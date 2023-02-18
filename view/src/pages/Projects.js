@@ -28,7 +28,9 @@ function Projects(props) {
     }
 
     return (
-        <Container>
+        <Container
+            id='Projects'
+        >
             <Typography
                 variant="h3"
                 margin={'64px 0'}

@@ -3,33 +3,34 @@ import About from './pages/About';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import React from 'react';
-import BackGround from './components/BackGround'
 import './assets/css/main.scss'
 import theme from './Theme';
 import { useState } from 'react';
-import { Typography, Button, Box, Container, ThemeProvider } from '@mui/material'
+import { Typography, Button, Box, ThemeProvider } from '@mui/material'
 import { styled } from '@mui/material/styles';
 
 function App() {
 
 	const [toggleMenu, setToggleMenu] = useState(false)
 
-	function animate() {
-		return toggleMenu ? 'slide-left' : 'slide-right';
-	}
-
-
-
 	return (
 		<ThemeProvider theme={theme}>
 
 			<div className="App">
 				{/* <BackGround /> */}
+				<NavBar
+					setToggleMenu={setToggleMenu}
+				/>
 				<Box
-					paddingBottom={'72px'}
+					overflow={'auto'}
+					height={'calc(100vh - 68px)'}
+					sx={{
+						scrollbarWidth: 'none',
+						'&::-webkit-scrollbar': {
+							display: 'none'
+						}
+					}}
 				>
-					<NavBar setToggleMenu={setToggleMenu} />
-
 					<Box>
 						<Home />
 						<About />
@@ -49,7 +50,7 @@ function NavBar(props) {
 	const goTo = (page) => (event) => {
 		// window.location.href=`#page${page}`
 		let pageAnchor = document.getElementById(page)
-		pageAnchor.scrollIntoView()
+		pageAnchor.scrollIntoView({ behavior: 'smooth' })
 		props.setToggleMenu(false)
 	}
 
@@ -85,8 +86,9 @@ function NavBar(props) {
 			alignItems={'center'}
 			sx={{
 				backgroundColor: (theme) => theme.palette.secondary.main,
-				top: 0,
-				position: 'sticky',
+				//top: 0,
+				//position: 'sticky',
+				height: props.height || '68px',
 				borderBottom: 'solid 1px black',
 				zIndex: 99
 			}}
@@ -105,8 +107,9 @@ function NavBar(props) {
 				pages.map((page) => {
 					return (
 						<NavButton
-						key={page}
+							key={page}
 							variant={'text'}
+							onClick={goTo(page)}
 						>
 							<Typography
 								variant='h5'
