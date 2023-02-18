@@ -42,6 +42,19 @@ function Home() {
         )
     }
 
+    const links = [
+        'https://www.linkedin.com/in/mikal-young-6772a516a',
+        'https://github.com/ventusboy',
+        'mailto:mikalmyoung@gmail.com',
+        'https://www.upwork.com/o/profiles/users/_~01f898c51eb6ad6854/'
+    ]
+
+    function openLink(index){
+        return function (){
+            window.open(links[index], '_blank').focus();
+        }
+    }
+
 
     return (
         <Container
@@ -85,10 +98,10 @@ function Home() {
                     flexDirection={'column'}
                     margin={'16px 0'}
                 >
-                    <ExternalLink width={'90%'}>Linkedin</ExternalLink>
-                    <ExternalLink width={'80%'}>Github</ExternalLink>
-                    <ExternalLink width={'70%'}>Email Me</ExternalLink>
-                    <ExternalLink width={'60%'}>Upwork</ExternalLink>
+                    <ExternalLink onClick={openLink(0)} width={'90%'}>Linkedin</ExternalLink>
+                    <ExternalLink onClick={openLink(1)} width={'80%'}>Github</ExternalLink>
+                    <ExternalLink onClick={openLink(2)} width={'70%'}>Email Me</ExternalLink>
+                    <ExternalLink onClick={openLink(3)} width={'60%'}>Upwork</ExternalLink>
                 </Box>
 
             </Box>
