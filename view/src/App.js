@@ -43,12 +43,18 @@ function App(props) {
 			return
 		//console.log(scrollTo)
 
-		let pageAnchor = document.getElementById(scrollTo)
-		//setTimeout(function () {
-		pageAnchor.scrollIntoView({
+		//let pageAnchor = document.getElementById(scrollTo)
+
+		document.getElementById('container').scrollTo({
+			left: 0,
+			top: document.getElementById(scrollTo).offsetTop,
 			behavior: "smooth",
-			block: "start",
 		});
+		//setTimeout(function () {
+		/*pageAnchor.scrollIntoView({
+			behavior: "smooth",
+			block: "end",
+		});*/
 			//setScrollTo('')
 		//closeMenu()
 		//}, isMobile ? 100 : 0);
@@ -84,6 +90,7 @@ function App(props) {
 					isMobile={isMobile}
 				/>
 				<Box
+					id={'container'}
 					overflow={'auto'}
 					height={'calc(100vh - 68px)'}
 					//paddingTop={'68px'}
