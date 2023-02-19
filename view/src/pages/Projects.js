@@ -21,6 +21,9 @@ function Projects(props) {
 
     function openLink(link){
         return function (){
+            if (window.captureOutboundLink){
+                window.captureOutboundLink(link);
+            }
             window.open(link, '_blank').focus();
         }
     }

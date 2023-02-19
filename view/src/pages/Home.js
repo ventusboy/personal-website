@@ -51,6 +51,9 @@ function Home(props) {
 
     function openLink(index) {
         return function () {
+            if (window.captureOutboundLink){
+                window.captureOutboundLink(links[index]);
+            }
             window.open(links[index], '_blank').focus();
         }
     }

@@ -17,6 +17,7 @@ function App(props) {
 	const [scrollTo, setScrollTo] = useState('')
 	const [isMobile, setIsMobile] = useState(window.innerWidth < 740)
 
+
 	const pages = ['Home', 'About Me', 'Projects']
 
 	const goTo = (page) => (event) => {
