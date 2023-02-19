@@ -45,7 +45,7 @@ function App(props) {
 
 		//let pageAnchor = document.getElementById(scrollTo)
 		let extraPadding = 0
-		if (navigator.userAgent.match(/(Android)/)){
+		if( /Android/i.test(navigator.userAgent) ) {
 			extraPadding = 68
 		}
 
