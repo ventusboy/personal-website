@@ -6,20 +6,12 @@ import { BoldDivider } from "../components/CustomComponents";
 //import { styled } from '@mui/material/styles';
 
 function About(props) {
-    /* constructor (props) {
-        super(props)
-        this.state = {
-            languages: [],
-            tools: []
-        }
-    } */
+
     const [languages, setLanguages] = useState([])
     const [tools, setTools] = useState([])
 
 
     useEffect(() => {
-        //const baseURL = 'https://us-central1-portfolio-610be.cloudfunctions.net'
-
         async function initialize() {
             try {
                 let { data } = await axios.get('/getAbout')
@@ -58,7 +50,6 @@ function About(props) {
                 {'About Me'}
             </Typography>
             <Box
-                //id="About"
                 display={'flex'}
                 width={1}
                 justifyContent={'space-between'}
@@ -67,7 +58,6 @@ function About(props) {
 
                 <Box
                     display={'flex'}
-                    //justifyContent={'space-around'}
                     flexDirection={'column'}
                     width={props.isMobile ? 1 : .3}
                 >
@@ -78,7 +68,6 @@ function About(props) {
                         }}
                     >
                         <Box
-                            //marginBottom={'24px'}
                         >
                             <Typography
                                 variant="h5"
@@ -187,7 +176,7 @@ function About(props) {
                         I pride myself in my ability to accomplish the goals I set for myself 
                         and my attention to detail in my professional work. Every second spent 
                         creating is an opportunity for me to learn something new, and if I'm
-                        lucky, I'll be able to apply the new knowledge to other parts of my life.
+                        lucky I'll be able to apply the new knowledge to other parts of my life.
                     </Typography>
                 </Box>
             </Box>

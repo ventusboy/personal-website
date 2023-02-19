@@ -78,12 +78,8 @@ function App(props) {
 		<ThemeProvider theme={responsiveFontSizes(theme)}>
 
 			<Box 
-			
-				className="App"
-				//display={'flex'}
-				
+				className="App"				
 			>
-				{/* <BackGround /> */}
 
 				<NavBar
 					navOptions={navOptions}
@@ -94,10 +90,7 @@ function App(props) {
 					id={'container'}
 					overflow={'auto'}
 					height={'calc(100vh - 68px)'}
-					//marginTop={'68px'}
-					//paddingTop={'68px'}
-					//position={'absolute'}
-					//bottom={0}
+
 					sx={{
 						scrollbarWidth: 'none',
 						'&::-webkit-scrollbar': {
@@ -118,10 +111,7 @@ function App(props) {
 						</Stack>
 
 					</Drawer>
-					<Box
-						//paddingTop={'68px'}
-						//marginTop={'68px'}
-					>
+					<Box>
 						<Home
 							isMobile={isMobile}
 						/>
@@ -154,8 +144,6 @@ function NavBar(props) {
 			width={1}
 			sx={{
 				backgroundColor: (theme) => theme.palette.secondary.main,
-				//top: 0,
-				//position: 'fixed',
 				height: props.height || '68px',
 				borderBottom: 'solid 1px black',
 				zIndex: 99

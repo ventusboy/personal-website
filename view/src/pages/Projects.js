@@ -1,10 +1,8 @@
-//import Project from "./../components/Project"
 import React from 'react';
 import axios from "axios";
 import { useEffect, useState } from 'react';
 import { Box, Typography, Container, Paper, Button } from '@mui/material';
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
-//import Projects from './Projects';
 import { styled } from '@mui/material/styles';
 
 function Projects(props) {
