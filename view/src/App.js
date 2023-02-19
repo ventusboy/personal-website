@@ -51,7 +51,7 @@ function App(props) {
 
 		document.getElementById('container').scrollTo({
 			left: 0,
-			top: document.getElementById(scrollTo).offsetTop + (-1 * extraPadding),
+			top: document.getElementById(scrollTo).offsetTop + (-1 * extraPadding * 2),
 			behavior: "smooth",
 		});
 		//setTimeout(function () {
