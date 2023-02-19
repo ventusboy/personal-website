@@ -43,9 +43,10 @@ function App(props) {
 			return
 
 		let extraPadding = 0
-		if(/Android/i.test(navigator.userAgent) ) {
+		//if(/Android/i.test(navigator.userAgent) ) {
 			extraPadding = 68
-		}
+		//}
+		console.log(document.getElementById(scrollTo).offsetTop)
 
 		document.getElementById('container').scrollTo({
 			left: 0,
@@ -76,7 +77,12 @@ function App(props) {
 	return (
 		<ThemeProvider theme={responsiveFontSizes(theme)}>
 
-			<Box className="App">
+			<Box 
+			
+				className="App"
+				//display={'flex'}
+				
+			>
 				{/* <BackGround /> */}
 
 				<NavBar
@@ -88,9 +94,10 @@ function App(props) {
 					id={'container'}
 					overflow={'auto'}
 					height={'calc(100vh - 68px)'}
+					//marginTop={'68px'}
 					//paddingTop={'68px'}
-					position={'absolute'}
-					bottom={0}
+					//position={'absolute'}
+					//bottom={0}
 					sx={{
 						scrollbarWidth: 'none',
 						'&::-webkit-scrollbar': {
@@ -113,7 +120,7 @@ function App(props) {
 					</Drawer>
 					<Box
 						//paddingTop={'68px'}
-						marginTop={'68px'}
+						//marginTop={'68px'}
 					>
 						<Home
 							isMobile={isMobile}
@@ -147,8 +154,8 @@ function NavBar(props) {
 			width={1}
 			sx={{
 				backgroundColor: (theme) => theme.palette.secondary.main,
-				top: 0,
-				position: 'fixed',
+				//top: 0,
+				//position: 'fixed',
 				height: props.height || '68px',
 				borderBottom: 'solid 1px black',
 				zIndex: 99
