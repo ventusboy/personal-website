@@ -44,10 +44,14 @@ function App(props) {
 		//console.log(scrollTo)
 
 		//let pageAnchor = document.getElementById(scrollTo)
+		let extraPadding = 0
+		if (navigator.userAgent.match(/(Android)/)){
+			extraPadding = 68
+		}
 
 		document.getElementById('container').scrollTo({
 			left: 0,
-			top: document.getElementById(scrollTo).offsetTop,
+			top: document.getElementById(scrollTo).offsetTop + extraPadding,
 			behavior: "smooth",
 		});
 		//setTimeout(function () {
