@@ -41,9 +41,7 @@ function App(props) {
 
 		if(scrollTo === '')
 			return
-		//console.log(scrollTo)
 
-		//let pageAnchor = document.getElementById(scrollTo)
 		let extraPadding = 0
 		if(/Android/i.test(navigator.userAgent) ) {
 			extraPadding = 68
@@ -54,14 +52,7 @@ function App(props) {
 			top: document.getElementById(scrollTo).offsetTop + (-1 * extraPadding * 2),
 			behavior: "smooth",
 		});
-		//setTimeout(function () {
-		/*pageAnchor.scrollIntoView({
-			behavior: "smooth",
-			block: "end",
-		});*/
-			//setScrollTo('')
-		//closeMenu()
-		//}, isMobile ? 100 : 0);
+
 
 	}, [toggleMenu, scrollTo, isMobile])
 
@@ -143,7 +134,9 @@ function App(props) {
 
 function NavBar(props) {
 
-
+	function openPage (){
+		window.open(window.origin, '_self')//.focus();
+	}
 
 	return (
 		<Box
@@ -168,6 +161,10 @@ function NavBar(props) {
 				marginRight={'auto'}
 				marginLeft={'24px'}
 				fontWeight={'500'}
+				sx={{
+					cursor: 'pointer'
+				}}
+				onClick={openPage}
 			>
 				{'Mikal Young'}
 			</Typography>
