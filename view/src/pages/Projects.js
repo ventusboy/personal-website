@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import { useEffect, useState } from 'react';
-import { Box, Typography, Container, Paper, Button } from '@mui/material';
+import { Box, Typography, Container, Paper, Button, CardMedia } from '@mui/material';
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { styled } from '@mui/material/styles';
 
@@ -60,6 +60,23 @@ function Projects(props) {
                                 <Box
                                     padding={2}
                                 >
+                                    <Box
+                                        //height={'300px'}
+                                        width={'auto'}
+                                        padding={1}
+                                    >
+                                        <CardMedia
+                                            sx={{
+                                                width: '100%',
+                                                //height: '100%',
+                                                border: '1px solid black',
+                                                aspectRatio: '16/9'
+                                            }}
+                                            image={'/assets/otw.PNG'}//require('/assets/otw.PNG')}
+                                        >
+
+                                        </CardMedia>
+                                    </Box>
 
                                     {link ?
                                         (<NavButton
