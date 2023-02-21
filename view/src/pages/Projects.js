@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import { useEffect, useState } from 'react';
-import { Box, Typography, Container, Paper, Button } from '@mui/material';
+import { Box, Typography, Container, Paper, Button, CardMedia } from '@mui/material';
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { styled } from '@mui/material/styles';
 
@@ -13,7 +13,7 @@ function Projects(props) {
         axios.get('/getProjects')
             .then(({ data }) => {
                 let projectsArray = Object.keys(data).map((element) => data[element])
-                setProjects(projectsArray.sort((a,b) => a.description.length - b.description.length))
+                setProjects(projectsArray.sort((a,b) => a.order - b.order))
             }).catch(() => {
                 console.log('error getting projects')
             })
@@ -44,7 +44,7 @@ function Projects(props) {
                 spacing={{ md: 2 }}
                 paddingBottom={6}
             >
-                {projects.map(({ description, name, link }) => {
+                {projects.map(({ description, name, link,image }) => {
                     return (
                         <Grid
                             key={name}
@@ -60,6 +60,23 @@ function Projects(props) {
                                 <Box
                                     padding={2}
                                 >
+                                    {image && <Box
+                                        //height={'300px'}
+                                        width={'auto'}
+                                        padding={1}
+                                    >
+                                        <CardMedia
+                                            sx={{
+                                                width: '100%',
+                                                //height: '100%',
+                                                border: '1px solid black',
+                                                aspectRatio: '16/9'
+                                            }}
+                                            image={`/assets/project-images/${image}.jpeg`}
+                                        >
+
+                                        </CardMedia>
+                                    </Box>}
 
                                     {link ?
                                         (<NavButton
