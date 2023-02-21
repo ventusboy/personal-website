@@ -23,7 +23,10 @@ let theme = createTheme({
             main: '#000000'
         },
         secondary: {
-            main: '#FFF'
+            main: '#FFF'//'#F4F3EE'
+        },
+        background: {
+            default: '#FFFFF'
         }
     }
 
