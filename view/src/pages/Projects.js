@@ -44,7 +44,7 @@ function Projects(props) {
                 spacing={{ md: 2 }}
                 paddingBottom={6}
             >
-                {projects.map(({ description, name, link,image }) => {
+                {projects.map(({ description, name, link, image }) => {
                     return (
                         <Grid
                             key={name}
