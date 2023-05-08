@@ -36,7 +36,7 @@ function Projects(props) {
                 variant="h3"
                 margin={'64px 0'}
             >
-                {'Personal Projects'}
+                {'Projects'}
             </Typography>
             <Grid
                 width={1}
