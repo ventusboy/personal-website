@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import { useEffect, useState } from 'react';
-import { Box, Typography, Container, Paper, Button, CardMedia } from '@mui/material';
+import { Box, Typography, Container, Paper, Button, CardMedia, Link } from '@mui/material';
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { styled } from '@mui/material/styles';
 
@@ -13,20 +13,20 @@ function Projects(props) {
         axios.get('/getProjects')
             .then(({ data }) => {
                 let projectsArray = Object.keys(data).map((element) => data[element])
-                setProjects(projectsArray.sort((a,b) => a.order - b.order))
+                setProjects(projectsArray.sort((a, b) => a.order - b.order))
             }).catch(() => {
                 console.log('error getting projects')
             })
     }, [setProjects])
 
-    function openLink(link){
-        return function (){
-            if (window.captureOutboundLink){
+    /* function openLink(link) {
+        return function () {
+            if (window.captureOutboundLink) {
                 window.captureOutboundLink(link);
             }
             window.open(link, '_blank').focus();
         }
-    }
+    } */
 
     return (
         <Container
@@ -54,7 +54,8 @@ function Projects(props) {
                             <Paper
                                 elevation={4}
                                 sx={{
-                                    height: 1
+                                    height: 1,
+                                    //bgcolor: '#D11149'
                                 }}
                             >
                                 <Box
@@ -79,20 +80,28 @@ function Projects(props) {
                                     </Box>}
 
                                     {link ?
-                                        (<NavButton
-                                            disableTouchRipple
-                                            onClick={openLink(link)}
-                                            sx={{
-                                                padding: '16px',
-                                            }}
-                                        >
-                                            <Typography
-                                                variant="h4"
-                                                borderBottom={'3px solid black'}
+                                        (
+                                            <Link
+                                                href={link}
+                                                target={'_blank'}
+                                                underline={'none'}
+                                                rel={"noopener"}
                                             >
-                                                {name}
-                                            </Typography>
-                                        </NavButton>) :
+                                                <NavButton
+                                                    disableTouchRipple
+                                                    //onClick={openLink(link)}
+                                                    sx={{
+                                                        padding: '16px',
+                                                    }}
+                                                >
+                                                    <Typography
+                                                        variant="h4"
+                                                        borderBottom={'3px solid black'}
+                                                    >
+                                                        {name}
+                                                    </Typography>
+                                                </NavButton>
+                                            </Link>) :
                                         (<Typography
                                             variant="h4"
                                             padding={'16px'}

@@ -6,8 +6,8 @@ import React from 'react';
 import './assets/css/main.scss'
 import theme from './Theme';
 import { useState } from 'react';
-import { Typography, Button, Box, ThemeProvider, Drawer, Stack } from '@mui/material'
-import { styled, responsiveFontSizes } from '@mui/material/styles';
+import { Typography, Button, Box, ThemeProvider, Drawer, Stack, CssBaseline, Paper } from '@mui/material'
+import { styled } from '@mui/material/styles';
 import { BoldDivider } from './components/CustomComponents';
 import { useEffect } from 'react';
 
@@ -36,16 +36,16 @@ function App(props) {
 		})
 	}, [props])
 
-	useEffect(()=>{
-		if(toggleMenu === true)
+	useEffect(() => {
+		if (toggleMenu === true)
 			return
 
-		if(scrollTo === '')
+		if (scrollTo === '')
 			return
 
 		let extraPadding = 0
 		//if(/Android/i.test(navigator.userAgent) ) {
-			extraPadding = 68
+		extraPadding = 68
 		//}
 		console.log(document.getElementById(scrollTo).offsetTop)
 
@@ -76,10 +76,10 @@ function App(props) {
 
 
 	return (
-		<ThemeProvider theme={responsiveFontSizes(theme)}>
-
-			<Box 
-				className="App"				
+		<ThemeProvider theme={theme}>
+			<CssBaseline />
+			<Box
+				className="App"
 			>
 
 				<NavBar
@@ -91,6 +91,7 @@ function App(props) {
 					id={'container'}
 					overflow={'auto'}
 					height={'calc(100vh - 68px)'}
+					zIndex={1}
 
 					sx={{
 						scrollbarWidth: 'none',
@@ -112,7 +113,8 @@ function App(props) {
 						</Stack>
 
 					</Drawer>
-					<Box>
+					<Box
+					>
 						<Home
 							isMobile={isMobile}
 						/>
@@ -132,65 +134,69 @@ function App(props) {
 
 function NavBar(props) {
 
-	function openPage (){
+	function openPage() {
 		window.open(window.origin, '_self')//.focus();
 	}
 
 	return (
-		<Box
-			className="navbar"
-			display='flex'
-			flexDirection='row'
-			alignItems={'center'}
-			width={1}
+		<Paper
+			elevation={4}
 			sx={{
-				backgroundColor: (theme) => theme.palette.secondary.main,
-				height: props.height || '68px',
-				borderBottom: 'solid 1px black',
+				position: 'relative',
 				zIndex: 99
 			}}
 		>
-			<Typography
-				variant='h4'
-				component={'h1'}
-				margin={'12px'}
-				marginRight={'auto'}
-				marginLeft={'24px'}
-				fontWeight={'500'}
+			<Box
+				className="navbar"
+				display='flex'
+				alignItems={'center'}
+				width={1}
 				sx={{
-					cursor: 'pointer'
+					backgroundColor: (theme) => theme.palette.secondary.main,
+					height: props.height || '68px',
+					borderBottom: 'solid 1px black',
 				}}
-				onClick={openPage}
 			>
-				{'Mikal Young'}
-			</Typography>
-			{!props.isMobile ?
-				props.navOptions
-				:
-				<Box
-					height={1}
-					padding={'16px'}
-					display={'flex'}
-					justifyContent={'space-around'}
-					flexDirection={'column'}
+				<Typography
+					variant='h4'
+					component={'h1'}
+					margin={'0 auto 0 24px'}
+					fontWeight={'500'}
 					sx={{
-						aspectRatio: '1/1'
+						cursor: 'pointer'
 					}}
-					onClick={props.openMenu}
+					onClick={openPage}
 				>
-					{[1, 2, 3].map((index) => {
-						return (
-							<BoldDivider
-								key={index}
-								sx={{
-									borderWidth: '2px'
-								}}
-							/>
-						)
-					})}
-				</Box>
-			}
-		</Box>
+					{'Mikal Young'}
+				</Typography>
+				{!props.isMobile ?
+					props.navOptions
+					:
+					<Box
+						height={1}
+						padding={'16px'}
+						display={'flex'}
+						justifyContent={'space-around'}
+						flexDirection={'column'}
+						sx={{
+							aspectRatio: '1/1'
+						}}
+						onClick={props.openMenu}
+					>
+						{[1, 2, 3].map((index) => {
+							return (
+								<BoldDivider
+									key={index}
+									sx={{
+										borderWidth: '2px'
+									}}
+								/>
+							)
+						})}
+					</Box>
+				}
+			</Box>
+		</Paper>
 	)
 }
 

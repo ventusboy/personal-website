@@ -1,4 +1,4 @@
-import axios from "axios";
+//import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import { Box, Container, Paper, Typography } from '@mui/material';
@@ -12,7 +12,7 @@ function About(props) {
 
 
     useEffect(() => {
-        async function initialize() {
+        /* async function initialize() {
             try {
                 let { data } = await axios.get('/getAbout')
                 setLanguages(makeFit(data.languages.sort((a, b) => b.length - a.length)))
@@ -20,17 +20,21 @@ function About(props) {
             } catch (error) {
                 console.log(error)
             }
-        }
-        initialize()
+        } */
+        let tempLangs = ['JavaScript','Python','Java', 'C#', 'SQL', 'HTML', 'CSS','PHP', 'C']
+        let tempTools = ['React.js', 'Figma', 'Material UI', 'git', 'Vue.js', 'Angular', 'DynamoDB', 'Firebase', 'Node.js']
+        setLanguages(makeFit(tempLangs))
+        setTools(makeFit(tempTools))
+        //initialize()
     }, [])
 
     function makeFit(array) {
         let sortedArray = []
         let length = 0
-        while (array.length > 0){
+        while (array.length > 0) {
             let itemLength = array[0].length
 
-            if(itemLength + length < 26){
+            if (itemLength + length < 26) {
                 length += itemLength
                 sortedArray.push(array.shift())
             } else {
@@ -61,97 +65,16 @@ function About(props) {
                     flexDirection={'column'}
                     width={props.isMobile ? 1 : .3}
                 >
-                    <Paper
-                        elevation={4}
-                        sx={{
-                            margin: '16px 0'
-                        }}
-                    >
-                        <Box
-                        >
-                            <Typography
-                                variant="h5"
-                                textAlign={'center'}
-                                padding={1}
-                            >
-                                {"Languages I Know"}
-                            </Typography>
-                            <BoldDivider />
+                    <AboutCard title={'Languages I Know'} content={languages} />
 
-                            <Box
-                                display={'flex'}
-                                flexWrap={'wrap'}
-                                justifyContent={'center'}
-                                width={1}
-                                padding={2}
-                                columnGap={2}
-                                rowGap={1}
-                            >
-                                {
-                                    languages.map((element, index) => {
-                                        return (
-                                            <Typography
-                                                key={element}
-                                                variant={'h6'}
-                                                width={'fit-content'}
-                                            >
-                                                {element}
-                                            </Typography>
-                                        )
-                                    })
-                                }
-                            </Box>
-                        </Box>
-                    </Paper>
-                    <Paper
-                        elevation={4}
-                        sx={{
-                            margin: '16px 0'
-                        }}
-                    >
-                        <Box>
-                            <Typography
-                                variant="h5"
-                                textAlign={'center'}
-                                padding={1}
-                            >
-                                {"Tools I Use"}
-                            </Typography>
-                            <BoldDivider/>
-
-                            <Box
-                                display={'flex'}
-                                flexWrap={'wrap'}
-                                justifyContent={'center'}
-                                width={1}
-                                padding={2}
-                                rowGap={1}
-                                columnGap={1}
-                            >
-                                {
-                                    tools.map((element, index) => {
-                                        return (
-                                            <Typography
-                                                key={element}
-                                                variant={'h6'}
-                                                width={'fit-content'}
-                                                marginRight={'16px'}
-                                            >
-                                                {element}
-                                            </Typography>
-                                        )
-                                    })
-                                }
-                            </Box>
-                        </Box>
-                    </Paper>
+                    <AboutCard title={'Tools I Use'} content={tools} />
                 </Box>
 
                 <Box
                     display={'flex'}
                     flexDirection={'column'}
                     justifyContent={'center'}
-                    marginTop={props.isMobile ? 4: 0}
+                    marginTop={props.isMobile ? 4 : 0}
                     width={props.isMobile ? 1 : .65}
                 >
                     <Typography
@@ -173,8 +96,8 @@ function About(props) {
                             textIndent: '24px'
                         }}
                     >
-                        I pride myself in my ability to accomplish the goals I set for myself 
-                        and my attention to detail in my professional work. Every second spent 
+                        I pride myself in my ability to accomplish the goals I set for myself
+                        and my attention to detail in my professional work. Every second spent
                         creating is an opportunity for me to learn something new, and if I'm
                         lucky I'll be able to apply the new knowledge to other parts of my life.
                     </Typography>
@@ -183,6 +106,53 @@ function About(props) {
         </Container>
     )
 
+}
+
+function AboutCard(props) {
+    return (
+        <Paper
+            elevation={4}
+            sx={{
+                margin: '16px 0'
+            }}
+        >
+            <Box>
+                <Typography
+                    variant="h5"
+                    textAlign={'center'}
+                    padding={1}
+                >
+                    {props.title}
+                </Typography>
+                <BoldDivider />
+
+                <Box
+                    display={'flex'}
+                    flexWrap={'wrap'}
+                    justifyContent={'center'}
+                    width={1}
+                    padding={2}
+                    rowGap={1}
+                    columnGap={1}
+                >
+                    {
+                        props.content.map((element, index) => {
+                            return (
+                                <Typography
+                                    key={element}
+                                    variant={'h6'}
+                                    width={'fit-content'}
+                                    marginRight={'16px'}
+                                >
+                                    {element}
+                                </Typography>
+                            )
+                        })
+                    }
+                </Box>
+            </Box>
+        </Paper>
+    )
 }
 
 
