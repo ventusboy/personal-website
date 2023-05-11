@@ -1,15 +1,17 @@
+import './assets/css/main.scss'
 import './App.css';
+import ReactGA from 'react-ga';
 import About from './pages/About';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
-import React from 'react';
-import './assets/css/main.scss'
 import theme from './Theme';
 import { useState } from 'react';
 import { Typography, Button, Box, ThemeProvider, Drawer, Stack, CssBaseline, Paper } from '@mui/material'
 import { styled } from '@mui/material/styles';
 import { BoldDivider } from './components/CustomComponents';
 import { useEffect } from 'react';
+import useAnalyticsEventTracker from './components/useAnalyticsEventTracker';
+
 
 function App(props) {
 
@@ -19,12 +21,12 @@ function App(props) {
 
 
 	const pages = ['Home', 'About Me', 'Projects']
+	const gaEventTracker = useAnalyticsEventTracker("navbar");
 
-	const goTo = (page) => (event) => {
-		setScrollTo(page)
-		setToggleMenu(false)
-	}
+
 	function openMenu() {
+		//let gaEventTracker = useAnalyticsEventTracker("hamburgerMenu");
+		gaEventTracker("click", "hamburgerMenu");
 		setToggleMenu(true)
 	}
 	function closeMenu() {
@@ -34,6 +36,8 @@ function App(props) {
 		window.addEventListener("resize", () => {
 			setIsMobile(window.innerWidth < 740)
 		})
+		const TRACKING_ID = process.env.REACT_APP_GTAG; // OUR_TRACKING_ID
+		ReactGA.initialize(TRACKING_ID);
 	}, [props])
 
 	useEffect(() => {
@@ -47,7 +51,7 @@ function App(props) {
 		//if(/Android/i.test(navigator.userAgent) ) {
 		extraPadding = 68
 		//}
-		console.log(document.getElementById(scrollTo).offsetTop)
+		//console.log(document.getElementById(scrollTo).offsetTop)
 
 		document.getElementById('container').scrollTo({
 			left: 0,
@@ -59,6 +63,14 @@ function App(props) {
 	}, [toggleMenu, scrollTo, isMobile])
 
 	const navOptions = pages.map((page) => {
+		
+
+		const goTo = (page) => (event) => {
+			setScrollTo(page);
+			setToggleMenu(false);
+			console.log(page)
+			gaEventTracker("clickz", page);
+		}
 		return (
 			<NavButton
 				key={page}
