@@ -1,12 +1,12 @@
 import './assets/css/main.scss'
 import './App.css';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import About from './pages/About';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import theme from './Theme';
 import { useState } from 'react';
-import { Typography, Button, Box, ThemeProvider, Drawer, Stack, CssBaseline, Paper } from '@mui/material'
+import { Typography, Button, Box, ThemeProvider, Drawer, Stack, CssBaseline, Paper, Link } from '@mui/material'
 import { styled } from '@mui/material/styles';
 import { BoldDivider } from './components/CustomComponents';
 import { useEffect } from 'react';
@@ -68,8 +68,8 @@ function App(props) {
 		const goTo = (page) => (event) => {
 			setScrollTo(page);
 			setToggleMenu(false);
-			console.log(page)
 			gaEventTracker("click", page);
+			//ReactGA.send({ hitType: "pageview", page: `/${page}`, title: page });
 		}
 		return (
 			<NavButton
@@ -146,10 +146,6 @@ function App(props) {
 
 function NavBar(props) {
 
-	function openPage() {
-		window.open(window.origin, '_self')//.focus();
-	}
-
 	return (
 		<Paper
 			elevation={4}
@@ -169,18 +165,15 @@ function NavBar(props) {
 					borderBottom: 'solid 1px black',
 				}}
 			>
-				<Typography
+				<Link
 					variant='h4'
-					component={'h1'}
 					margin={'0 auto 0 24px'}
 					fontWeight={'500'}
-					sx={{
-						cursor: 'pointer'
-					}}
-					onClick={openPage}
+					underline='none'
+					href='https://www.mikalyoung.com/'
 				>
 					{'Mikal Young'}
-				</Typography>
+				</Link>
 				{!props.isMobile ?
 					props.navOptions
 					:
