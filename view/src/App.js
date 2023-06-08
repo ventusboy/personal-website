@@ -69,7 +69,7 @@ function App(props) {
 			setScrollTo(page);
 			setToggleMenu(false);
 			console.log(page)
-			gaEventTracker("clickz", page);
+			gaEventTracker("click", page);
 		}
 		return (
 			<NavButton
